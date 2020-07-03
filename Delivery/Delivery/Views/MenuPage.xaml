@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Busqueda="clr-namespace:Delivery.Views.Busqueda"
+             xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
+             mc:Ignorable="d"             
+             x:Class="Delivery.Views.MenuPage"
+             Title="MenuPrincipal">
+
+    <!--<ContentPage.Resources>
+
+
+
+        <ResourceDictionary>
+
+            <Style TargetType="ImageCell" x:Key="ImagenCellStyle">
+                <Setter Property="TextColor" Value="Black"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            
+            <StackLayout 
+                Padding="15,0,0,0"
+                HeightRequest="75" 
+                BackgroundColor="{StaticResource ColorPrimario}"
+                Orientation="Horizontal">
+
+                <Image 
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="CenterAndExpand" 
+                    Aspect="Fill" 
+                    Source="HuellaDeOso" x:Name="imagenCell" ></Image>
+
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Text="Nombre de la aplicacion"
+                    TextColor="White" 
+                    ></Label>
+
+            </StackLayout >
+
+            <TableView x:Name="tableViewMenu" Intent="Menu" >
+
+                <TableView.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="ImageCell" x:Key="ImagenCellStyle">
+                            <Setter Property="TextColor" Value="Black"></Setter>
+                        </Style>
+                    </ResourceDictionary>
+                    
+                </TableView.Resources>
+                
+                <TableRoot >
+                    
+
+                    <TableSection  TextColor="Black">
+                       
+                        <!--Title="Titulo"-->
+                        <ImageCell  
+                            ImageSource="{Imagenes:ImageResource Source=Extensions.Imagenes.Image.wi-fi.png}"  
+                            Text="Inicio"
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{x:Type Busqueda:AgrupacionPage}">
+                        </ImageCell>
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Destacado" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Búsqueda" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Ajustes" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Cuenta" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Carrito" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Cerrar sesión" />
+
+                    </TableSection>
+                    
+                    
+                    
+                    
+
+                    <!--<TextCell 
+                            Text="Clientes" 
+                            TextColor="Black" 
+                            Command="{Binding NavigateCommand}"                            
+                            CommandParameter="{x:Type reporte:ClientesPage}"
+                            />
+
+                        <TextCell Text="Mensualidades" TextColor="Black"
+                                   Command="{Binding NavigateCommand}"                            
+                                    CommandParameter="{x:Type pages:MensualidadPage}"/>-->
+
+
+
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+
+      
+
+
+    </ContentPage.Content>
+
+
+    <!--<StackLayout VerticalOptions="FillAndExpand">
+        <ListView x:Name="ListViewMenu"
+                    HasUnevenRows="True">
+            <d:ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
+                </x:Array>
+            </d:ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding Title}" d:Text="{Binding .}" FontSize="20"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>-->
+
+</ContentPage>

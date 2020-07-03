@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Auxiliar.ConnectivityPage" BackgroundColor="Transparent">
+    
+    <ContentPage.Content>
+
+        <StackLayout 
+            Opacity="1"
+            Padding="0"
+            Margin="20"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" 
+            WidthRequest="300">
+            
+            <ActivityIndicator 
+                IsRunning="True" 
+                Color="{StaticResource ColorAuxiliarDos}"
+                HorizontalOptions="CenterAndExpand"
+                ></ActivityIndicator>
+
+            <Label
+                x:Name="lblTextAMostar"
+                FontAttributes="Bold"
+                Text="{Binding }"
+                TextColor="{StaticResource ColorAuxiliarDos}"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Large">                
+            </Label>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

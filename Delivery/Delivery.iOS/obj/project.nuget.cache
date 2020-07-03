@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dihWYGhz0F0yOn6rA0T2JmVacAmkCOuGBWlysYVN1eY/WLGFKYdaTGh8odRYCYzTXSD9ohVqLhJMpDtwhfPnoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\skeys\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
+  ],
+  "logs": []
+}

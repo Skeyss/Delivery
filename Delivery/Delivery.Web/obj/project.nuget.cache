@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "LPjbYMh5zsmJ2MVRMcPoRMUrz7D8WJS4rch1+KCddUiVJsRoM/ISUJAv917P0uM5t81JQK9yF0r/I86yxqrmlQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Skeys\\source\\repos\\Delivery\\Delivery\\Delivery.Web\\Delivery.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Skeys\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Skeys\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Skeys\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\Skeys\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

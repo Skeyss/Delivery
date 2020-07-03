@@ -1,0 +1,12 @@
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.csprojAssemblyReference.cache
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.AssemblyInfoInputs.cache
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.AssemblyInfo.cs
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.csproj.CoreCompileInputs.cache
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\bin\Debug\netcoreapp3.1\Delivery_Datos.deps.json
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\bin\Debug\netcoreapp3.1\Delivery_Datos.dll
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\bin\Debug\netcoreapp3.1\Delivery_Datos.pdb
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\bin\Debug\netcoreapp3.1\Delivery_Entidades.dll
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\bin\Debug\netcoreapp3.1\Delivery_Entidades.pdb
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.csproj.CopyComplete
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.dll
+C:\Users\skeys\source\repos\Delivery\Delivery_Datos\obj\Debug\netcoreapp3.1\Delivery_Datos.pdb

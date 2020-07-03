@@ -1,0 +1,9 @@
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\bin\Debug\netcoreapp3.1\Delivery_Entidades.deps.json
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\bin\Debug\netcoreapp3.1\Delivery_Entidades.dll
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\bin\Debug\netcoreapp3.1\Delivery_Entidades.pdb
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.AssemblyInfoInputs.cache
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.AssemblyInfo.cs
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.csproj.CoreCompileInputs.cache
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.dll
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.pdb
+C:\Users\skeys\source\repos\Delivery\Delivery_Entidades\obj\Debug\netcoreapp3.1\Delivery_Entidades.csprojAssemblyReference.cache

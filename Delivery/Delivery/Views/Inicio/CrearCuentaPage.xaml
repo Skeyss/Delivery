@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.CrearCuentaPage"
+             >
+
+
+
+
+
+    <ContentPage.ToolbarItems>
+
+       
+
+
+    </ContentPage.ToolbarItems>
+
+
+
+
+
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+
+
+            <!--<Style TargetType="Entry" >
+                
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="TextColor" Value="White" ></Setter>
+                        <Setter Property="BackgroundColor" Value="#37B5E5"></Setter>
+                    </Trigger>
+
+             
+
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="Button" >
+                
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}" ></Setter>
+                    </Trigger>
+
+                </Style.Triggers>
+            </Style>-->
+
+
+
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+ 
+    <ContentPage.Content>
+
+        <StackLayout 
+            BackgroundColor="{StaticResource ColorPrimario}"
+            Padding="20,20,20,20" 
+            Spacing="10"
+            VerticalOptions="StartAndExpand"
+            Style="{StaticResource styleMaxWidthRequest}">
+
+        
+
+            <Label Text="Crear cuenta " 
+                   TextColor="White" 
+                   FontSize="Medium"
+                   Margin="30"></Label>
+
+            <Frame Padding="10">
+                <StackLayout  Spacing="0">
+                    <Label Text="Corero"></Label>
+                    <Entry Placeholder="Ingrese algo" PlaceholderColor="LightGray"></Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame Padding="10">
+                <StackLayout  Spacing="0">
+                    <Label Text="Corero"></Label>
+                    <Entry Placeholder="Ingrese algo" PlaceholderColor="LightGray"></Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame Padding="10">
+                <StackLayout  Spacing="0">
+                    <Label Text="Corero"></Label>
+                    <Entry Placeholder="Ingrese algo" PlaceholderColor="LightGray"></Entry>
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Crear" Style="{StaticResource styleBtnPrimario}"></Button>
+
+            <StackLayout 
+                VerticalOptions="EndAndExpand"
+                Margin="0"
+                Padding="0"
+                Spacing="0">
+                <StackLayout.Resources>
+                    
+                    <ResourceDictionary>
+
+                        <Style TargetType="Button">
+                            
+                            <Setter Property="TextColor" Value="White"></Setter>
+                            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                            <Setter Property="VerticalOptions" Value="EndAndExpand"></Setter>
+                            <Setter Property="HorizontalOptions" Value="Start"></Setter>
+
+                        </Style>
+                        
+                    </ResourceDictionary>
+                    
+                </StackLayout.Resources>
+
+                <Button x:Name="btnIniciarSesion" 
+                    Text="Iniciar sesión" >
+                </Button>
+
+                <Button Text="Iniciar con facebook"></Button>
+
+                <Button Text="Iniciar con google"></Button>
+
+                <Button Text="Mensaje de texto"  ></Button>
+
+            </StackLayout>
+     
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

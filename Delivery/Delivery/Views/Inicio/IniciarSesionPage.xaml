@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.IniciarSesionPage"
+             BackgroundColor="{StaticResource ColorPrimario}">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="Small"></Setter>
+            </Style>
+            
+          
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content >
+
+        <StackLayout Padding="20,20,20,20" VerticalOptions="End" Style="{StaticResource styleMaxWidthRequest}">
+
+            <Image x:Name="ImageInicioDeSesion"
+                Source="https://lh3.googleusercontent.com/DXIyLCA8vtDhW2bmwTNm7vFJ7mUimu-kw1O9PErIMkNxQxW7fzd6eAI4HfIbbRn3CICv=w720-h310-rw"              
+                VerticalOptions="StartAndExpand">
+                
+            </Image>
+
+            <Frame 
+                BackgroundColor="White"
+                >
+
+                <StackLayout Spacing="0">
+
+                    <Label
+                        Text="Correo electrónico"
+                        >                        
+                    </Label>
+                    
+                    <Entry>
+                        
+                    </Entry>
+
+                    <Label
+                        Text="Contraseña"                      
+                        >
+                    </Label>
+
+                    <Entry
+                        IsPassword="True"
+                        >
+
+                    </Entry>
+
+                </StackLayout>              
+                
+            </Frame>
+
+            <Button x:Name="btnIniciarSesion"
+                Style="{StaticResource styleBtnPrimario}"
+                Text="Ingresar"
+                    Command="{Binding CommandLogin}">                
+            </Button>
+
+            <Button x:Name="btnOlvidateTuContrasenha"
+                Text="¿Olvidaste tu clave?" 
+                TextColor="White" 
+                FontSize="Small" 
+                BackgroundColor="Transparent"
+                ></Button>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+    
+</ContentPage>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Delivery.App">
+    
+    
+
+    
+    <Application.Resources>
+        <ResourceDictionary>
+
+
+            <!--#region Colores de aplicacion-->
+
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+
+            <Color x:Key="ColorPrimario">#5c1c6b</Color>
+            <Color x:Key="ColorSecundario">#611F73</Color>
+            <Color x:Key="ColorTerciario">#8332A6</Color>
+
+
+            <Color x:Key="ColorAuxiliarUno">#F24B6A</Color>
+            <Color x:Key="ColorAuxiliarDos">#04D9B2</Color>
+            <Color x:Key="ColorAuxiliarTres">#F2C53D</Color>
+
+
+
+
+
+            <!--#endregion-->
+
+
+
+            <!--#region Tipos de Botones-->
+
+
+            <Style TargetType="Button" x:Key="styleBtnPrimario">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+
+
+
+            <Style TargetType="Button" x:Key="styleBtnSecundario">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimario}"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                <Setter Property="BorderWidth" Value="2"></Setter>
+                <Setter Property="BorderColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+            </Style>
+
+
+
+            <!--#endregion-->
+
+
+
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ColorPrimario}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+
+
+
+
+            <Style TargetType="StackLayout" x:Key="styleMaxWidthRequest">
+                <Setter Property="WidthRequest" Value="800"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>                
+            </Style>
+
+
+
+        </ResourceDictionary>
+        
+    </Application.Resources>
+    
+</Application>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Busqueda.AgrupacionPage">
+
+    <NavigationPage.TitleView>
+
+            <Frame CornerRadius="500" BackgroundColor="White" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <SearchBar Placeholder="Buscar"></SearchBar>
+            </Frame>
+    
+        
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Resources>
+
+        <Style TargetType="StackLayout" x:Key="styleSeleccion">
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>                    
+                    <VisualStateGroup x:Name="CommonStates">   
+                        
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="White"></Setter>
+                            </VisualState.Setters>                           
+                        </VisualState>
+
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>                    
+                </VisualStateGroupList>
+            </Setter>
+            
+        </Style>
+
+       
+
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>       
+
+        <ToolbarItem Text="Add" ></ToolbarItem>
+
+        <ToolbarItem  Text="Uno" Order="Secondary" ></ToolbarItem>
+        <ToolbarItem Text="Dos" Order="Secondary" ></ToolbarItem>
+        <ToolbarItem Text="Tres" Order="Secondary"></ToolbarItem>
+        <ToolbarItem Text="Cuatro" Order="Secondary"></ToolbarItem>
+        <ToolbarItem Text="Cinco" Order="Secondary"></ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        
+    
+    <StackLayout BackgroundColor="White" Style="{StaticResource styleMaxWidthRequest}" Padding="20,20,20,20">
+
+            <Frame Padding="1,10,1,10" CornerRadius="10" WidthRequest="600" >
+                <SearchBar Placeholder="Buscar" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></SearchBar>
+            </Frame>
+
+
+            <Grid BackgroundColor="Red" HeightRequest="500" RowSpacing="1">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+     
+            </Grid>
+            
+                
+            
+
+
+             <RefreshView Command="{Binding CommandActualizar}" IsRefreshing="{Binding IsBusy}">
+
+                <!-- ItemSizingStrategy="MeasureFirstItem" Gestion de tamaño por fila-->
+                <!--SelectionChanged evento que cambia cuando selecionas otro rows-->
+                <!-- esta funcioando con select item si se usa esto eliminar lo anterior   SelectionChangedCommandParameter="{Binding Source={x:Reference CollectionViewAgrupacion},Path=SelectedItem}"-->
+                <!--ItemsLayout="HorizontalList" horientacion del collectio nview-->
+                <!--EmptyView="asdasd"-->
+                <CollectionView  
+                    ItemsSource="{Binding Agrupaciones}" 
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectAgrupacion}"
+                    SelectionChangedCommand="{Binding AgrupacionChangedCommand}">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Horizontal"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <!--Pantilla de view-->
+                    <CollectionView.ItemTemplate >
+
+                        <DataTemplate >
+                            
+
+                            <StackLayout  BackgroundColor="White" Style="{StaticResource styleSeleccion}"  >
+
+                                <Label Text="{Binding Nombre}" FontSize="Title" HorizontalOptions="CenterAndExpand"></Label>
+                                <Image   HeightRequest="{OnPlatform 200, Android=150, iOS=200, UWP=400}"  Aspect="AspectFill"  Source="{Binding UrlImagen}"></Image>
+                            
+
+                                <!--<StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+
+                                </StackLayout.GestureRecognizers>-->
+                                
+                            </StackLayout>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </RefreshView>
+
+       
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

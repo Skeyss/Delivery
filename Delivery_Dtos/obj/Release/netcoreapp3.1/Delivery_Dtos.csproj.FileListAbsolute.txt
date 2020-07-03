@@ -1,0 +1,9 @@
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\bin\Release\netcoreapp3.1\Delivery_Dtos.deps.json
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\bin\Release\netcoreapp3.1\Delivery_Dtos.dll
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\bin\Release\netcoreapp3.1\Delivery_Dtos.pdb
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.csprojAssemblyReference.cache
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.csproj.CoreCompileInputs.cache
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.AssemblyInfoInputs.cache
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.AssemblyInfo.cs
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.dll
+C:\Users\Skeys\source\repos\Delivery\Delivery_Dtos\obj\Release\netcoreapp3.1\Delivery_Dtos.pdb

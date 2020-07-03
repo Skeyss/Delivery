@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Incio="clr-namespace:Delivery.Views.Inicio"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.BienvenidaPage"
+             >
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+        
+
+
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+   
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="{StaticResource ColorPrimario}" Style="{StaticResource styleMaxWidthRequest}">
+
+            <CarouselView ItemsSource="{Binding .Bienvenidas}" IndicatorView="indicatorView">               
+             
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <StackLayout  >
+                            
+                            <Image                           
+                                Source="{Binding .PathImagen}"
+                                Aspect="AspectFill"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="EndAndExpand">   
+                            </Image>
+                            
+                            
+                            <Label 
+                                
+                                Text="{Binding .MensajePrincipal}"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="EndAndExpand"
+                                FontSize="Title"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+                                ></Label>
+
+                            <Label 
+                                Text="{Binding .MensajeSecundario}"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="StartAndExpand"
+                                FontSize="Subtitle"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+                                ></Label>
+
+                       
+
+                        
+
+
+                        </StackLayout>
+                       
+                        
+                      
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>              
+             
+
+            </CarouselView>
+
+           <!-- Mostrar cuantos objetos hay en carrusel view-->
+            <IndicatorView 
+                    VerticalOptions="CenterAndExpand"
+                   HeightRequest="100"   
+                   x:Name="indicatorView"
+                   IndicatorColor="{StaticResource ColorTerciario}"
+                   SelectedIndicatorColor="{StaticResource ColorAuxiliarDos}"
+                   HorizontalOptions="Center"
+                   BackgroundColor="{StaticResource ColorPrimario}">
+            </IndicatorView>
+            
+            
+            <StackLayout x:Name="StackLayoutBotones"
+                Orientation="Horizontal"
+                BackgroundColor="{StaticResource ColorPrimario}"  
+                VerticalOptions="EndAndExpand"
+                Padding="20,10,20,20" >
+
+                <Button 
+                        x:Name="btnCrearCuenta"
+                        Style="{StaticResource styleBtnSecundario}"
+                        Text="Crear cuenta"  
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding .CommandCrearCuenta}"
+                        >
+                    </Button>
+
+                    <Button
+                        x:Name="btnInciarSesion"
+                        Style="{StaticResource styleBtnPrimario}"
+                        Text="Iniciar sesión"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding .CommandIniciarSesion}"
+                        >
+                    </Button>
+                
+            </StackLayout>
+            
+        </StackLayout>
+      
+    </ContentPage.Content>
+
+   
+    
+</ContentPage>
