@@ -9230,11 +9230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
       "projectName": "DeliveryWebApi",
-      "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
+      "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
       "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\DeliveryWebApi\\obj\\",
+      "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\DeliveryWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -9254,14 +9254,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {
-              "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj"
+            "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {
+              "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj"
             },
-            "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj": {
-              "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj"
+            "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj": {
+              "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj"
             },
-            "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj": {
-              "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj"
+            "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj": {
+              "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj"
             }
           }
         }

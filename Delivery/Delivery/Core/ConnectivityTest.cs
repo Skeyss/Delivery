@@ -16,7 +16,7 @@ namespace Delivery.Core
         {
             // Register for connectivity changes, be sure to unsubscribe when finished
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-
+            
         }
 
         void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
@@ -81,6 +81,6 @@ namespace Delivery.Core
     
         }
 
-  
+ 
     }
 }

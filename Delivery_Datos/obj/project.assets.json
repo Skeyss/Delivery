@@ -1041,11 +1041,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
+      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
       "projectName": "Delivery_Datos",
-      "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
+      "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
       "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\obj\\",
+      "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1065,8 +1065,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Entidades\\Delivery_Entidades.csproj": {
-              "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Entidades\\Delivery_Entidades.csproj"
+            "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Entidades\\Delivery_Entidades.csproj": {
+              "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Entidades\\Delivery_Entidades.csproj"
             }
           }
         }

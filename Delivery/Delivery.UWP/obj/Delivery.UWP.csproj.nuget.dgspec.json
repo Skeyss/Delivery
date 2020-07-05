@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj": {}
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj": {
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj",
+        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj",
         "projectName": "Delivery.UWP",
-        "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj",
+        "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.UWP\\Delivery.UWP.csproj",
         "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.UWP\\obj\\",
+        "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.UWP\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -33,8 +33,8 @@
         "frameworks": {
           "uap10.0.16299": {
             "projectReferences": {
-              "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
-                "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
+              "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
+                "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
+        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
         "projectName": "Delivery",
-        "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
+        "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
         "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\obj\\",
+        "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

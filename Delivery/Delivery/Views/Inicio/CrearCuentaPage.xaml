@@ -5,31 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.CrearCuentaPage"
+            xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
              >
-
-
-
-
 
     <ContentPage.ToolbarItems>
 
-       
+
 
 
     </ContentPage.ToolbarItems>
-
-
-
-
-
-
+    
 
     <ContentPage.Resources>
 
         <ResourceDictionary>
-
-
-
+            
             <!--<Style TargetType="Entry" >
                 
                 <Style.Triggers>
@@ -60,22 +50,28 @@
 
     </ContentPage.Resources>
 
- 
+
+
+    
     <ContentPage.Content>
 
-        <StackLayout 
-            BackgroundColor="{StaticResource ColorPrimario}"
-            Padding="20,20,20,20" 
-            Spacing="10"
-            VerticalOptions="StartAndExpand"
-            Style="{StaticResource styleMaxWidthRequest}">
+        <StackLayout Style="{StaticResource styleStackLayout}" BackgroundColor="White" >
 
-        
+            <Label Text="MI NÙMERO DE CELULAR ES" TextColor="Black" FontSize="Large"></Label>
+            <Renderer:MyEntry Text="asd"></Renderer:MyEntry>
 
-            <Label Text="Crear cuenta " 
+            <Frame Margin="0"  Padding="0" OutlineColor="{StaticResource ColorAuxiliarDos}" >
+                <Entry   Margin="0" VerticalTextAlignment="Center"></Entry>
+                
+            </Frame>
+            <CheckBox Color="{StaticResource ColorPrimario}"></CheckBox>
+                
+
+
+
+                <Label Text="Crear cuenta " 
                    TextColor="White" 
-                   FontSize="Medium"
-                   Margin="30"></Label>
+                   FontSize="Medium"></Label>
 
             <Frame Padding="10">
                 <StackLayout  Spacing="0">
@@ -100,7 +96,7 @@
 
             <Button Text="Crear" Style="{StaticResource styleBtnPrimario}"></Button>
 
-            <StackLayout 
+            <!--<StackLayout 
                 VerticalOptions="EndAndExpand"
                 Margin="0"
                 Padding="0"
@@ -132,7 +128,7 @@
 
                 <Button Text="Mensaje de texto"  ></Button>
 
-            </StackLayout>
+            </StackLayout>-->
      
 
         </StackLayout>

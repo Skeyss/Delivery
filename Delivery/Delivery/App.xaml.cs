@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using Delivery.Services;
 using Delivery.Views;
 using Delivery.Views.Inicio;
+using Delivery.Core.HttpClientGeneral;
 
 namespace Delivery
 {
@@ -25,7 +26,6 @@ namespace Delivery
             Device.SetFlags(new string[] { "Shapes_Experimental" });
             // Device.SetFlags(new string[] { "Shapes_Experimental" });
 
-
             if (UseMockDataStore)
                 DependencyService.Register<MockDataStore>();
 
@@ -36,6 +36,9 @@ namespace Delivery
             //skeys ver donde poner esto y se sale con el boton de volver aTraz
             Core.ConnectivityTest asd= new Core.ConnectivityTest();
             MainPage = new NavigationPage( new BienvenidaPage());
+
+
+
         }
 
         private object ConnectivityTest()

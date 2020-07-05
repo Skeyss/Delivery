@@ -26,6 +26,7 @@ namespace Delivery_Datos.Repositorio
             {
                 return await _contexto.Pantalladebienvenida.OrderBy(c => c.OrdenDeVisualizacion).ToListAsync();
             }
+
             catch (Exception exception)
             {
                 return null;

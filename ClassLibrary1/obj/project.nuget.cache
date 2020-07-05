@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NOMdFWoV4XYnx897rDfC3vRn30YGN1l0tZYT/MB725TGLsl3xIaPqcjQ+VY640239ubeMWOomrsLmOFHKXp0+A==",
+  "dgSpecHash": "i9cL2PooaPgSdZbfSmNXqDulPiaQdnBovjo32UGB/udAagfVymtfo+20I4esCxn5pbJWdbqW783tqnLfsgSAzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

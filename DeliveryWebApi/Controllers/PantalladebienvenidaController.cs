@@ -22,8 +22,8 @@ namespace DeliveryWebApi.Controllers
         {
             _IPantalladebienvenida = _iPantalladebienvenida;
         }
-
-        // GET: api/Pantalladebienvenida
+       
+        // GET: api/Pantalladebienvenida/Mostrar
         [HttpGet("Mostrar")]
         //skeys autoriazion
        // [Authorize(Roles = "Login")]

@@ -23,7 +23,7 @@
 
     <ContentPage.Content >
 
-        <StackLayout Padding="20,20,20,20" VerticalOptions="End" Style="{StaticResource styleMaxWidthRequest}">
+        <StackLayout Padding="20,20,20,20" VerticalOptions="End" >
 
             <Image x:Name="ImageInicioDeSesion"
                 Source="https://lh3.googleusercontent.com/DXIyLCA8vtDhW2bmwTNm7vFJ7mUimu-kw1O9PErIMkNxQxW7fzd6eAI4HfIbbRn3CICv=w720-h310-rw"              

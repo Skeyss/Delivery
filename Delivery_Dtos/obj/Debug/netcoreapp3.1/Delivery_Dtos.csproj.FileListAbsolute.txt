@@ -6,3 +6,12 @@ C:\Users\skeys\source\repos\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Deliv
 C:\Users\skeys\source\repos\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.csproj.CoreCompileInputs.cache
 C:\Users\skeys\source\repos\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.dll
 C:\Users\skeys\source\repos\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\bin\Debug\netcoreapp3.1\Delivery_Dtos.deps.json
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\bin\Debug\netcoreapp3.1\Delivery_Dtos.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\bin\Debug\netcoreapp3.1\Delivery_Dtos.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.csprojAssemblyReference.cache
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.AssemblyInfoInputs.cache
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.AssemblyInfo.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.csproj.CoreCompileInputs.cache
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery_Dtos\obj\Debug\netcoreapp3.1\Delivery_Dtos.pdb

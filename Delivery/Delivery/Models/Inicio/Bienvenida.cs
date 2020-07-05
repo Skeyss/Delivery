@@ -6,15 +6,19 @@ namespace Delivery.Models.Inicio
 {
     public class Bienvenida
     {
-        public string PathImagen { get; set; }
+        public int Id { get; set; }
+        public string UrlImagen { get; set; }
         public string MensajePrincipal { get; set; }
         public string MensajeSecundario { get; set; }
+        public int? OrdenDeVisualizacion { get; set; }
 
         public Bienvenida()
         {
-            PathImagen = "";
-            MensajePrincipal = "";
-            MensajeSecundario = "";
+            this.Id = 0;
+            this.UrlImagen = "";
+            this.MensajePrincipal = "";
+            this.MensajeSecundario = "";
+            this.OrdenDeVisualizacion = 0;
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pjWLk2tKgzpY2vicXLiuZi06ILCJkpskhwBygyz1OXWLoa/5Q6jcq+ZvzOftW04pZgxM9Cn9EnAxhHQ3bPlWcg==",
+  "dgSpecHash": "P2bvZXSlhSqJ8NEjxvpUOcTvRnxsOi/Fjm0XbnDpYaTdc51xnmCqsDTI1OQQM/aIOgWEgMeQfFgamHzIb67DGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

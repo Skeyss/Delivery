@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj",
+      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj",
       "projectName": "Delivery_Dtos",
-      "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj",
+      "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Dtos\\Delivery_Dtos.csproj",
       "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Dtos\\obj\\",
+      "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Dtos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

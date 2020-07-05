@@ -24,3 +24,28 @@ C:\Users\Skeys\source\repos\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\
 C:\Users\Skeys\source\repos\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.dll
 C:\Users\Skeys\source\repos\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\ref\Delivery.dll
 C:\Users\Skeys\source\repos\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\bin\Debug\netstandard2.0\Delivery.deps.json
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\bin\Debug\netstandard2.0\Delivery.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\bin\Debug\netstandard2.0\ref\Delivery.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\bin\Debug\netstandard2.0\Delivery.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Auxiliar\ConnectivityPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Busqueda\AgrupacionPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\BienvenidaPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\CrearCuentaPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\IncioPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\IniciarSesionPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\RegistroPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.AssemblyInfoInputs.cache
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.AssemblyInfo.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.csproj.CoreCompileInputs.cache
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\ref\Delivery.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Delivery.pdb

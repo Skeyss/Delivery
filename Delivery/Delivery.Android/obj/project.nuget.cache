@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7uV3VJJfE3KYP5wr0O0/o0MfJqbAcBeHoJiScuXX5rwMuRcvxvO1FY8B8cr7aRjxMHAplUBR7021eGuOThnsow==",
+  "dgSpecHash": "b7F9n22lUg9cbFei3Ewhn5bBvC0pgmVcNC7I6lkDDq2I7z4AdkwxbGSop3ucNh7fCHaE3oOFXsGvZiSF3cECrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ISJ+L3cQY2v9SM4FceH5K53UwsqO/vrBntRInmPpnoE9RS+unfCCgbJWzath1rYDuLi7srI0fcfDr7APjy78hQ==",
+  "dgSpecHash": "l77Q1JjgDHcXNoFeQVPvvX12NjjSsAffuvPkI8fUkb4avb+0aAsbFPrHo4u5KwMWk3YkayhLqjhi8CiQ/YN5eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

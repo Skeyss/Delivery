@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj": {}
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj": {
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
+        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
         "projectName": "Delivery.Android",
-        "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
+        "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
         "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.Android\\obj\\",
+        "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
-                "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
+              "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
+                "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
               }
             }
           }
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
+        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
         "projectName": "Delivery",
-        "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
+        "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj",
         "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\obj\\",
+        "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

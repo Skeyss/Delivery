@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dihWYGhz0F0yOn6rA0T2JmVacAmkCOuGBWlysYVN1eY/WLGFKYdaTGh8odRYCYzTXSD9ohVqLhJMpDtwhfPnoA==",
+  "dgSpecHash": "cXA9uB1lCrFD/SpAxsk2Gh6j3QxYNkUjL26m+9+NobM/t7aWdfnQ02jeLWC5BnpGMLvbkemLP6X+D8BMBPhV5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",

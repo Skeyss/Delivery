@@ -25,7 +25,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="{StaticResource ColorPrimario}" Style="{StaticResource styleMaxWidthRequest}">
+        <StackLayout BackgroundColor="{StaticResource ColorPrimario}" >
 
             <CarouselView ItemsSource="{Binding .Bienvenidas}" IndicatorView="indicatorView">               
              

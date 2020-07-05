@@ -28,10 +28,8 @@ namespace DeliveryWebApi.Controllers
             _mapper = mapper;
         }
 
-        // POST: api/Persona
-        //[AllowAnonymous]
-        //[Authorize(Roles = "CreacionDeUsuario")]
-        [Authorize(Roles = "Login")]
+        // POST: api/Persona/Registrate
+        [AllowAnonymous]
         [HttpPost("Registrate")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

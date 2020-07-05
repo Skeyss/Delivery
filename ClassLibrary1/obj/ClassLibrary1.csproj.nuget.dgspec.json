@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {}
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\ClassLibrary1.csproj",
         "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

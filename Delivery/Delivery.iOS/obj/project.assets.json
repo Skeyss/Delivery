@@ -1057,11 +1057,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
       "projectName": "Delivery.iOS",
-      "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
+      "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
       "packagesPath": "C:\\Users\\skeys\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery.iOS\\obj\\",
+      "outputPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1082,8 +1082,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
-              "projectPath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
+            "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj": {
+              "projectPath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery\\Delivery.csproj"
             }
           }
         }

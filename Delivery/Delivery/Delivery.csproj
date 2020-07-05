@@ -12,6 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Era\**" />
+    <EmbeddedResource Remove="Services\Era\**" />
+    <None Remove="Services\Era\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Extensions\Imagenes\Image\wi-fi.png" />
   </ItemGroup>
 

@@ -5,15 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Delivery.App">
-    
-    
 
-    
+
     <Application.Resources>
+        
         <ResourceDictionary>
 
-
-            <!--#region Colores de aplicacion-->
 
             <Color x:Key="NavigationPrimary">#2196F3</Color>
 
@@ -21,28 +18,16 @@
             <Color x:Key="ColorSecundario">#611F73</Color>
             <Color x:Key="ColorTerciario">#8332A6</Color>
 
-
             <Color x:Key="ColorAuxiliarUno">#F24B6A</Color>
             <Color x:Key="ColorAuxiliarDos">#04D9B2</Color>
             <Color x:Key="ColorAuxiliarTres">#F2C53D</Color>
 
 
 
-
-
-            <!--#endregion-->
-
-
-
-            <!--#region Tipos de Botones-->
-
-
             <Style TargetType="Button" x:Key="styleBtnPrimario">
                 <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
                 <Setter Property="TextColor" Value="White"></Setter>
             </Style>
-
-
 
             <Style TargetType="Button" x:Key="styleBtnSecundario">
                 <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimario}"></Setter>
@@ -53,7 +38,7 @@
 
 
 
-            <!--#endregion-->
+
 
 
 
@@ -67,15 +52,19 @@
 
 
 
-            <Style TargetType="StackLayout" x:Key="styleMaxWidthRequest">
+            <Style TargetType="StackLayout" x:Key="styleStackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimario}"></Setter>
                 <Setter Property="WidthRequest" Value="800"></Setter>
-                <Setter Property="HorizontalOptions" Value="Center"></Setter>                
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="Padding" Value="20,20,20,20"></Setter>
             </Style>
 
 
-
         </ResourceDictionary>
-        
+
     </Application.Resources>
-    
+
+
+
 </Application>

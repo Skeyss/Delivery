@@ -1,6 +1,5 @@
 ﻿using Delivery.Core;
 using Delivery.Models;
-using Delivery.Services.Manager;
 using Delivery.Views.Busqueda;
 using System;
 using System.Collections.Generic;
@@ -69,25 +68,25 @@ namespace Delivery.ViewModels.Busqueda
 
         private async void CargarAgrupaciones()
         {
-            AgrupacionManager agrupacionManager = new AgrupacionManager();
+            //AgrupacionManager agrupacionManager = new AgrupacionManager();
 
-            EstadoDeConsulta edc_resultadoDeBuscar = new EstadoDeConsulta();
-            edc_resultadoDeBuscar=await  agrupacionManager.GetTasksAsync(true);
+            //EstadoDeConsulta edc_resultadoDeBuscar = new EstadoDeConsulta();
+            //edc_resultadoDeBuscar = await agrupacionManager.GetTasksAsync(true);
 
-            if (edc_resultadoDeBuscar.StatusProcesamiento)
-            {
-                var asdas =  (IEnumerable<Agrupacion>) edc_resultadoDeBuscar.ValorObjeto ;
-                Agrupaciones =  new ObservableCollection<Agrupacion>(asdas);
+            //if (edc_resultadoDeBuscar.StatusProcesamiento)
+            //{
+            //    var asdas = (IEnumerable<Agrupacion>)edc_resultadoDeBuscar.ValorObjeto;
+            //    Agrupaciones = new ObservableCollection<Agrupacion>(asdas);
 
-              // Agrupaciones =  new ObservableCollection<Agrupacion>( Agrupaciones.Where(c => c.MenuPrincipal == true));
-               
+            //    // Agrupaciones =  new ObservableCollection<Agrupacion>( Agrupaciones.Where(c => c.MenuPrincipal == true));
 
 
-            }
-            else
-            {
-                Agrupaciones = new ObservableCollection<Agrupacion>();             
-            }
+
+            //}
+            //else
+            //{
+            //    Agrupaciones = new ObservableCollection<Agrupacion>();
+            //}
 
         }
     }

@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace DeliveryWebApi.Controllers
 {
     [AllowAnonymous]
-    //[Authorize(Roles = "Administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class IncioDeSesionController : ControllerBase

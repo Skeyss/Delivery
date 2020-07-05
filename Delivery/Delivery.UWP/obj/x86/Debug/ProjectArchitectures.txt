@@ -1,1 +1,1 @@
-C:\Users\skeys\source\repos\Delivery\Delivery\Delivery.UWP\Delivery.UWP.csproj;x86
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.UWP\Delivery.UWP.csproj;x86

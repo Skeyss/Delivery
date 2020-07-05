@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q05pvxiWbCirrRdM7st9b68qA3p8f19ZCjEf135dBxdsKCtsnYvJ+yaQ/CWxIFMu0iKvBHgV+/Kl9Xe7dstjzQ==",
+  "dgSpecHash": "NZ25Bq6D14ln7eeyIwzgCUo90KcBfcqXeruMDUQD5BsTGeMpjadGXvxhd3pohqANBNToJ7jodQCrC3swhFg8wA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Proyecto Delivery\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
+  "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery_Datos\\Delivery_Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.5\\microsoft.aspnetcore.cryptography.internal.3.1.5.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.5\\microsoft.aspnetcore.cryptography.keyderivation.3.1.5.nupkg.sha512",
