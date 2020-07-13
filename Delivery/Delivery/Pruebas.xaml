@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:AAAAAA="clr-namespace:Delivery.AAAAA"
+             mc:Ignorable="d"
+             x:Class="Delivery.Pruebas">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array Type="{x:Type x:String}"
+                     x:Key="Hola">
+                <x:String>Red</x:String>
+                <x:String>Red</x:String>
+                <x:String>Red</x:String>
+                <x:String>Red</x:String>
+                <x:String>Red</x:String>
+            </x:Array>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+
+            <Label Text=" markupexternsiojhn"
+                   FontAttributes="{x:Static Member=FontAttributes.Bold}"
+                   TextColor="{x:Static Color.Red}">
+                
+                <!--<Label.FontAttributes>
+                    <x:Static Member="FontAttributes.Bold">
+                        
+                    </x:Static>
+                </Label.FontAttributes>-->
+                
+            </Label>
+
+                <Label BackgroundColor="{x:Static AAAAAA:DarkTheme.BackgroundColor}"></Label>
+                <AAAAAA:HealthBox HealthStatus="5" HeightRequest="50"></AAAAAA:HealthBox>
+
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Red</x:String>
+                            <x:String>Red</x:String>
+                            <x:String>Red</x:String>
+                            <x:String>Red</x:String>
+                            <x:String>Red</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+
+
+                <ListView ItemsSource="{StaticResource Hola}">
+                </ListView>
+
+
+            
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -31,7 +31,7 @@ namespace Delivery.Views
                    //Page page = (Page)Activator.CreateInstance(pageType);
                    //await Navigation.PushAsync(page);
 
-
+                   
                    var mainPageaa = Application.Current.MainPage as MasterDetailPage;
                    mainPageaa.Detail  = new NavigationPage((Page)Activator.CreateInstance(pageType));
                    mainPageaa.IsPresented = false;

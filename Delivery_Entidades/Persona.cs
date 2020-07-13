@@ -18,6 +18,7 @@ namespace Delivery_Entidades
         public string Email { get; set; }
         public string Password { get; set; }
         public string CodigoDeVerificacion { get; set; }
+        public string TelefonoVerificado { get; set; }
 
         public virtual Tipodedocumento TipoDeDocumentoCodigoNavigation { get; set; }
         public virtual ICollection<Pedido> Pedido { get; set; }

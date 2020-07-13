@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Delivery.Droid.Renderer;
-using Delivery.Renderer;
+﻿using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Android.Content;
+using Delivery.Renderer;
+using Delivery.Droid.Renderer;
+using Android.Graphics.Drawables;
 
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
 namespace Delivery.Droid.Renderer
@@ -29,13 +20,13 @@ namespace Delivery.Droid.Renderer
 
             if (Control != null)
             {
-                Control.Background = null;
-                Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
-                //Android.Graphics.Drawables.GradientDrawable gd = new GradientDrawable();
-                //gd.SetColor(global::Android.Graphics.Color.Transparent);
-                //this.Control.SetBackgroundDrawable(gd);
-                //this.Control.SetRawInputType(Android.Text.InputTypes.TextFlagNoSuggestions);
-                //Control.SetHintTextColor(Android.Content.Res.ColorStateList.ValueOf(global::Android.Graphics.Color.White));
+
+                base.OnElementChanged(e);
+
+                if (Control != null)
+                {
+                    Control.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
+                }
             }
         }
     }

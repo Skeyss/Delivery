@@ -21,8 +21,7 @@ namespace Delivery.UWP.Renderer
 
             if (Control != null)
             {
-                Control.Background = new SolidColorBrush(Colors.Cyan);
-                Control.BackgroundFocusBrush = new SolidColorBrush(Colors.Cyan);
+
             }
         }
     }

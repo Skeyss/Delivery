@@ -9,6 +9,13 @@ namespace Delivery_Datos.Interface
     public interface IPersonaRepositorio
     {
         Task<Persona> Agregar(Persona persona);
-        Task<(bool resultado, Persona persona)> ValidarIncioDeSesion(string Telefono, string Password);
+
+        Task<bool> Actualizar(Persona persona,bool encriptarPassword,bool encriptarCodigoDeVerificacion);
+
+        Task<(bool status, Persona persona)> ObtenerPersona(string Telefono);
+
+        Task<(bool status,bool existe)> ExisteTelefono(string Codigo);
+
+        Task<(bool status, Persona persona)> ValidarIncioDeSesion(string Telefono, string Password);
     }
 }

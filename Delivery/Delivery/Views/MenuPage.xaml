@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:Busqueda="clr-namespace:Delivery.Views.Busqueda"
              xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
+             xmlns:Local="clr-namespace:Delivery"
              mc:Ignorable="d"             
              x:Class="Delivery.Views.MenuPage"
              Title="MenuPrincipal">
@@ -30,7 +31,6 @@
             <StackLayout 
                 Padding="15,0,0,0"
                 HeightRequest="75" 
-                BackgroundColor="{StaticResource ColorPrimario}"
                 Orientation="Horizontal">
 
                 <Image 
@@ -73,7 +73,9 @@
                             Command="{Binding NavigateCommand}"
                             CommandParameter="{x:Type Busqueda:AgrupacionPage}">
                         </ImageCell>
-                        <ImageCell  ImageSource="HuellaDeOso" Text="Destacado" />
+                        <ImageCell  ImageSource="HuellaDeOso" Text="Pruebas" 
+                                    Command="{Binding NavigateCommand}"
+                                        CommandParameter="{x:Type Local:Pruebas}"/>
                         <ImageCell  ImageSource="HuellaDeOso" Text="Búsqueda" />
                         <ImageCell  ImageSource="HuellaDeOso" Text="Ajustes" />
                         <ImageCell  ImageSource="HuellaDeOso" Text="Cuenta" />

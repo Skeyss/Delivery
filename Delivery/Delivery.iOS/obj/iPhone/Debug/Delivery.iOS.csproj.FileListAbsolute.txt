@@ -89,7 +89,7 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\nb\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\nl\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\pl\Xamarin.Forms.Platform.iOS.resources.dll
-C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\pt-br\Xamarin.Forms.Platform.iOS.resources.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\pt-BR\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\pt\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\ro\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\ru\Xamarin.Forms.Platform.iOS.resources.dll
@@ -104,8 +104,10 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\Delivery.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\System.ComponentModel.Annotations.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\Delivery.pdb
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\bin\iPhone\Debug\System.ComponentModel.Annotations.xml
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items

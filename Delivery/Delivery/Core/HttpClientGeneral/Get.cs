@@ -40,6 +40,9 @@ namespace Delivery.Core.HttpClientGeneral
                     Uri uri = new Uri(string.Format(urlApi, string.Empty));
                     HttpResponseMessage response = await client.GetAsync(uri);
                     statusCode = response.StatusCode.GetHashCode();
+
+
+
                     if (response.IsSuccessStatusCode)
                     {
                         string content = await response.Content.ReadAsStringAsync();

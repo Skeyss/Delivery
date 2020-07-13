@@ -35,9 +35,9 @@ namespace Delivery
 
             //skeys ver donde poner esto y se sale con el boton de volver aTraz
             Core.ConnectivityTest asd= new Core.ConnectivityTest();
-            MainPage = new NavigationPage( new BienvenidaPage());
-
-
+          //  MainPage = new NavigationPage( new BienvenidaPage());
+            MainPage = new NavigationPage(new VerificacionCodigoPage());
+     
 
         }
 

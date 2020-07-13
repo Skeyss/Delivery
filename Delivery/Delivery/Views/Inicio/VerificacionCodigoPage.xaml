@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
+             xmlns:behaviors="clr-namespace:Delivery.Behavior;assembly=Delivery"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.VerificacionCodigoPage" IsTabStop="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Renderer:MyEntry">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontSize" Value="35"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="MaxLength" Value="1"></Setter>
+                <Setter Property="Keyboard" Value="Numeric"></Setter>
+                <Setter Property="ReturnType" Value="Next"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+
+                <!--<Style.Triggers>
+                    <Trigger TargetType="Renderer:MyEntry" Property="IsFocused" Value="True">
+                        <Setter Property="SelectionLength" Value="1" ></Setter>
+                        <Setter Property="CursorPosition" Value="0"></Setter>
+                    </Trigger>
+
+                </Style.Triggers>-->
+                
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                <Setter Property="HeightRequest" Value="80"></Setter>
+                <Setter Property="WidthRequest" Value="80"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="CornerRadius" Value="12"></Setter>
+            </Style>
+
+            <!--<Triggers TargetType="Renderer:MyEntry"  Property="Text" Value="">
+                <Setter Property="BackgroundColor" Value="Red"></Setter>
+                
+            </Triggers>-->
+
+            <!--<Trigger TargetType="Renderer:MyEntry"
+                                     Property="Text"
+                                     Value="">
+                <Setter Property="PlaceholderColor"
+                                        Value="Red"></Setter>
+            </Trigger>-->
+
+
+            <!--<Style TargetType="Renderer:MyEntry" >
+                
+                <Style.Triggers>
+                    <Trigger TargetType="Renderer:MyEntry" Property="Text" Value="">
+                        <Setter Property="TextColor" Value="White" ></Setter>
+                        <Setter Property="BackgroundColor" Value="#37B5E5"></Setter>
+                    </Trigger>
+                    
+                </Style.Triggers>
+            </Style>-->
+
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid IsTabStop="False">
+
+        <StackLayout  
+            Style="{StaticResource styleStackLayout}"
+            BackgroundColor="White"
+            WidthRequest="400" IsTabStop="False">
+
+            <Label Text="MI CÓDIGO PIN ES"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,25"></Label>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Frame Grid.Column="0" x:Name="frameUno">
+
+                    <Renderer:MyEntry x:Name="entryNumeroUno"  Text="{Binding NumeroUno}" TextChanged="entryNumeroUno_TextChanged" Completed="entryNumeroUno_Completed"  TabIndex="0">
+
+                        <!--<Renderer:MyEntry.Behaviors>
+                            <behaviors:SetFocusOnEntryCompletedBehavior NextFocusElementName="{x:Reference entryNumeroDos}" />
+                        </Renderer:MyEntry.Behaviors>-->
+
+                        <Renderer:MyEntry.Triggers>
+
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroDos}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsReadOnly" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroDos}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsReadOnly" Value="True"></Setter>
+                            </DataTrigger>
+
+                        </Renderer:MyEntry.Triggers>
+
+                    </Renderer:MyEntry>
+
+                </Frame>
+                
+                <Frame Grid.Column="1" x:Name="frameDos">
+                    <Renderer:MyEntry x:Name="entryNumeroDos" Text="{Binding NumeroDos}" IsEnabled="False" TextChanged="entryNumeroDos_TextChanged"  >
+                        
+                    
+
+                        <Renderer:MyEntry.Triggers>
+
+                          
+
+
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroUno}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroUno}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroTres}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsReadOnly" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroTres}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsReadOnly" Value="True"></Setter>
+                            </DataTrigger>
+
+                        </Renderer:MyEntry.Triggers>
+
+                    </Renderer:MyEntry>
+                </Frame>
+
+                <Frame  Grid.Column="2" x:Name="frameTres">
+
+                    <Renderer:MyEntry x:Name="entryNumeroTres" Text="{Binding NumeroTres}" IsEnabled="False" TextChanged="entryNumeroTres_TextChanged" >
+
+
+
+                        <Renderer:MyEntry.Triggers>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroDos}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroDos}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroCuatro}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsReadOnly" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroCuatro}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsReadOnly" Value="True"></Setter>
+                            </DataTrigger>
+
+                        </Renderer:MyEntry.Triggers>
+
+                    </Renderer:MyEntry>
+
+                </Frame>
+
+                <Frame Grid.Column="3" x:Name="frameCuatro" >
+                    <Renderer:MyEntry  x:Name="entryNumeroCuatro"  Text="{Binding NumeroCuatro}" IsEnabled="False" TextChanged="entryNumeroCuatro_TextChanged" >
+
+                        <Renderer:MyEntry.Triggers>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroTres}, Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Renderer:MyEntry" Binding="{Binding Source= {x:Reference entryNumeroTres}, Path=Text.Length}" Value="1">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                        </Renderer:MyEntry.Triggers>
+
+                    </Renderer:MyEntry>
+                </Frame>
+
+
+            </Grid>
+
+
+     
+        </StackLayout>
+
+
+        <Grid Opacity=".7" BackgroundColor="White" IsVisible="{Binding IsBusy}" IsTabStop="False">
+
+            <StackLayout
+                WidthRequest="500"
+            Padding="30"
+            BackgroundColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+                IsTabStop="False">
+                <ActivityIndicator IsRunning="True" Color="{StaticResource ColorAuxiliarDos}"  Scale="{OnPlatform 1, Android=0.5, iOS=1, UWP=2}"  FlowDirection="RightToLeft" />
+            </StackLayout>
+
+        </Grid>
+
+
+    </Grid>
+
+
+
+</ContentPage>

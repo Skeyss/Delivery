@@ -32,7 +32,7 @@
 
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                                <Setter Property="BackgroundColor" Value="Red"></Setter>
                             </VisualState.Setters>
                         </VisualState>
 

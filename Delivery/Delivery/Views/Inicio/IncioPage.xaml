@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.IncioPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource ColorPrimario}">
+        <StackLayout >
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

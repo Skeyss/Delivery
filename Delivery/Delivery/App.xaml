@@ -7,10 +7,12 @@
              x:Class="Delivery.App">
 
 
+
     <Application.Resources>
-        
+
         <ResourceDictionary>
 
+    
 
             <Color x:Key="NavigationPrimary">#2196F3</Color>
 
@@ -53,7 +55,6 @@
 
 
             <Style TargetType="StackLayout" x:Key="styleStackLayout">
-                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimario}"></Setter>
                 <Setter Property="WidthRequest" Value="800"></Setter>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
                 <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
@@ -64,7 +65,5 @@
         </ResourceDictionary>
 
     </Application.Resources>
-
-
 
 </Application>

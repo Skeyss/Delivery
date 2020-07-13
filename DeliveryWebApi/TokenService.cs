@@ -20,7 +20,7 @@ namespace DeliveryWebApi
             _configuration = configuration;
         }
 
-        public string GenerarPersonaToken(Persona persona)
+        public (string result,DateTime notBeforesate, DateTime expiresDate) GenerarPersonaToken(Persona persona)
         {
             //Accedemos a la sección JwtSettings del archivo appsettings.json
             var jwtSettings = _configuration.GetSection("JwtSettings");
@@ -38,14 +38,14 @@ namespace DeliveryWebApi
             //Creamos nuestra lista de Claims, en este caso para el Username,
             //el Email y el Perfil del Usuario.
             List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, persona.Denominacion));
-            claims.Add(new Claim(ClaimTypes.Email, persona.Email));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, persona.Id.ToString()));
+            claims.Add(new Claim(ClaimTypes.Name,string.IsNullOrWhiteSpace(persona.Denominacion)?"": persona.Denominacion));
+            claims.Add(new Claim(ClaimTypes.Email, string.IsNullOrWhiteSpace(persona.Email) ? "" : persona.Email));
             claims.Add(new Claim(ClaimTypes.MobilePhone, persona.Telefono));
             claims.Add(new Claim(ClaimTypes.Role, "Persona"));
-
-
+           
             // Creamos el objeto JwtSecurityToken
-            var token = new JwtSecurityToken(              
+             var token = new JwtSecurityToken(              
               issuer: issuer,
               audience: audience,
               claims: claims,
@@ -53,13 +53,13 @@ namespace DeliveryWebApi
               expires: DateTime.UtcNow.AddMinutes(minutes),
               signingCredentials: new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             );
-
+            
             // Creamos una representación en cadena del Token JWT (Json Web Token)         
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return (new JwtSecurityTokenHandler().WriteToken(token), token.ValidFrom, token.ValidTo);
 
         }
 
-        public string GenerarInicioDeSesionToken(Persona persona)
+        public string GenerarInicioDeSesionToken()
         {
             //Accedemos a la sección JwtSettings del archivo appsettings.json
             var jwtSettings = _configuration.GetSection("JwtSettings");
@@ -77,21 +77,22 @@ namespace DeliveryWebApi
             //Creamos nuestra lista de Claims, en este caso para el Username,
             //el Email y el Perfil del Usuario.
             List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, persona.Denominacion));
-            claims.Add(new Claim(ClaimTypes.Email, persona.Email));
-            claims.Add(new Claim(ClaimTypes.MobilePhone, persona.Telefono));
-            claims.Add(new Claim(ClaimTypes.Role, "Persona"));
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, "SKeys"));
+            claims.Add(new Claim(ClaimTypes.Name, "David Rayder Ambrosio Gaspar"));
+            claims.Add(new Claim(ClaimTypes.Email, "skeys@"));
+            claims.Add(new Claim(ClaimTypes.MobilePhone, "666666666"));
+            claims.Add(new Claim(ClaimTypes.Role, "Seguridad"));
 
 
             // Creamos el objeto JwtSecurityToken
-            var token = new JwtSecurityToken(
+            JwtSecurityToken token = new JwtSecurityToken(
               issuer: issuer,
               audience: audience,
               claims: claims,
               notBefore: DateTime.UtcNow,
-              expires: DateTime.UtcNow.AddMinutes(minutes),
+              expires: DateTime.UtcNow.AddYears(50),
               signingCredentials: new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
-            );
+            ); ;
 
             // Creamos una representación en cadena del Token JWT (Json Web Token)         
             return new JwtSecurityTokenHandler().WriteToken(token);

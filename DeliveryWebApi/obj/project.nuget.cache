@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P2bvZXSlhSqJ8NEjxvpUOcTvRnxsOi/Fjm0XbnDpYaTdc51xnmCqsDTI1OQQM/aIOgWEgMeQfFgamHzIb67DGA==",
+  "dgSpecHash": "bogtYOQtnenJYlGyotOTK5vuM7Nz3BsJRJ9nKxk7rNGquhQ+DNEF3N0/37bHa8Mo3JWBo/MhMi6davYjnYV01w==",
   "success": true,
   "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\DeliveryWebApi\\DeliveryWebApi.csproj",
   "expectedPackageFiles": [
@@ -184,7 +184,8 @@
     "C:\\Users\\skeys\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\skeys\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\skeys\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\skeys\\.nuget\\packages\\twilio\\5.45.0\\twilio.5.45.0.nupkg.sha512"
   ],
   "logs": []
 }

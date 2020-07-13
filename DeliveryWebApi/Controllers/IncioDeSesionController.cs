@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace DeliveryWebApi.Controllers
 {
-    [AllowAnonymous]
+    
+   
     [Route("api/[controller]")]
     [ApiController]
     public class IncioDeSesionController : ControllerBase
@@ -25,24 +26,62 @@ namespace DeliveryWebApi.Controllers
             _tokenService = tokenService;
         }
 
-        //POST: api/sesion/login
+       
+        [AllowAnonymous]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<string>> Post([FromBody] IncioDeSesion incioDeSesion)
+        public async Task<ActionResult<PersonaLogin>> Post([FromBody] IncioDeSesion incioDeSesion)
         {
-            var ASD = User.Claims;
-            if (incioDeSesion==null)
+            try
             {
-                return BadRequest("Usuario/Contraseña Inválidos.");
+                if (incioDeSesion == null)
+                {
+                    return BadRequest("Usuario/Contraseña Inválidos.");
+                }
+
+                var resultado = await _IPersonaRepositorio.ExisteTelefono(incioDeSesion.Telefono);
+                if (resultado.status == false)
+                {
+                    return BadRequest("No se pudo verificar el número de teléfono, intente de nuevo por favor");
+                }
+
+                if (resultado.existe == false)
+                {
+                    return BadRequest("El número de teléfono no se encuentra registrado");
+
+                }
+
+                var resultadoValidacion = await _IPersonaRepositorio.ValidarIncioDeSesion(incioDeSesion.Telefono, incioDeSesion.Password);
+                if (resultadoValidacion.status == false)
+                {
+                    return BadRequest("No se pudo verificar el número de teléfono, intente de nuevo por favor");
+                }
+
+                if (resultadoValidacion.persona == null)
+                {
+                    return BadRequest("Usuario/Contraseña Inválidos.");
+                }
+
+                var token = _tokenService.GenerarPersonaToken(resultadoValidacion.persona);
+
+                PersonaLogin personaLogin = new PersonaLogin();
+                personaLogin.Id = resultadoValidacion.persona.Id;
+                personaLogin.Denominacion = resultadoValidacion.persona.Denominacion;
+                personaLogin.Telefono = resultadoValidacion.persona.Telefono;
+                personaLogin.Email = resultadoValidacion.persona.Email;
+                personaLogin.Token = token.result;
+                personaLogin.ValidFrom = token.notBeforesate;
+                personaLogin.ValidTo = token.expiresDate;
+
+                return personaLogin;
+            }
+            catch (Exception exception)
+            {
+                //Guardar mensaje ex
+                return BadRequest("Error inesperado al intentar iniciar sesión ");
             }
 
-            var resultadoValidacion = await _IPersonaRepositorio.ValidarIncioDeSesion(incioDeSesion.Telefono, incioDeSesion.Password);
-            if (!resultadoValidacion.resultado)
-            {
-                return BadRequest("Usuario/Contraseña Inválidos.");
-            }
-            return _tokenService.GenerarPersonaToken(resultadoValidacion.persona);
         }
 
 

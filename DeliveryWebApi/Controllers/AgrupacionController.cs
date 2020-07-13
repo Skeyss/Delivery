@@ -12,7 +12,8 @@ using Microsoft.AspNetCore.JsonPatch;
 using AutoMapper;
 using Delivery_Dtos;
 using Microsoft.AspNetCore.Authorization;
-  
+using System.Runtime.InteropServices.WindowsRuntime;
+
 namespace DeliveryWebApi.Controllers
 {
     [Authorize]
@@ -30,11 +31,13 @@ namespace DeliveryWebApi.Controllers
         }
 
         // GET: api/Agrupacion
+        [AllowAnonymous]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IEnumerable<AgrupacionDto>>> Get()
         {
+
             var listResultado = await _IAgrupacionRepositorio.ObtenerAgrupacionesAsync();
 
             if (listResultado == null)
@@ -44,11 +47,10 @@ namespace DeliveryWebApi.Controllers
             else
             {
                 var listDto = _mapper.Map<List<AgrupacionDto>>(listResultado);
-        
+
 
                 return listDto;
             }
-            //return listResultado;
         }
 
         // GET: api/Agrupacion/5

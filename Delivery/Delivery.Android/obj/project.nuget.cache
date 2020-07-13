@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b7F9n22lUg9cbFei3Ewhn5bBvC0pgmVcNC7I6lkDDq2I7z4AdkwxbGSop3ucNh7fCHaE3oOFXsGvZiSF3cECrw==",
+  "dgSpecHash": "8Os7QCr0zvR895XCPHgCG6AnIJWZLwvHRrI4NGyLribmESDFzCF32GQvn3FqUE1F1cn5jetibEgCzaGFktakew==",
   "success": true,
   "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.Android\\Delivery.Android.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
+    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
   ],
   "logs": []
 }

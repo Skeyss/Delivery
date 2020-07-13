@@ -35,29 +35,77 @@ namespace DeliveryWebApi.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PersonaMostrar>> Post([FromBody] PersonaCreacion personaCreacion)
         {
+            try
+            {                
+                if (personaCreacion == null)
+                {
+                    return BadRequest("La solicitud es nula");
+                }
 
-            if (personaCreacion==null)
-            {
-                return BadRequest();
-            }
+                var resultadoDeBuscar = await _IPersonaRepositorio.ObtenerPersona(personaCreacion.Telefono);
 
-            Persona persona = _mapper.Map<Persona>(personaCreacion);
-            
-            if (persona.Denominacion.ToString().Trim()=="")
-            {
-                persona.Denominacion = persona.Telefono;
-            }
-            persona.TipoDeDocumentoCodigo = "0";
+                if (resultadoDeBuscar.status == false)
+                {
+                    return BadRequest("No se pudo verificar el número de teléfono, intente de nuevo por favor");
+                }
 
-            var nuevoPersona = await _IPersonaRepositorio.Agregar(persona);
-            if (nuevoPersona == null)
-            {
-                return BadRequest();
+                if (resultadoDeBuscar.persona==null)
+                {
+                    Persona personaAGuardar = _mapper.Map<Persona>(personaCreacion);
+                    if (personaAGuardar.Denominacion.ToString().Trim() == "")
+                    {
+                        personaAGuardar.Denominacion = personaAGuardar.Telefono;
+                    }
+                    personaAGuardar.TelefonoVerificado = "NO";
+                    personaAGuardar.TipoDeDocumentoCodigo = "0";
+                    string codigoDeVerificacion = (new Random().Next(1000, 9999)).ToString();
+                    personaAGuardar.CodigoDeVerificacion = codigoDeVerificacion;
+
+                    //GuardarPersona
+                    var nuevoPersona = await _IPersonaRepositorio.Agregar(personaAGuardar);
+                    if (nuevoPersona == null)
+                    {
+                        return BadRequest("Error al intentar crear cuenta");
+                    }
+                    else
+                    {
+                        Services.EnviarSMS.EnviarCodigoDeVerificacion(personaAGuardar.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
+                        PersonaMostrar nuevoUsuarioDto = _mapper.Map<PersonaMostrar>(nuevoPersona);
+                        return CreatedAtAction(nameof(Post), new { id = nuevoUsuarioDto.Id }, nuevoUsuarioDto);
+                    }
+                }
+                else
+                {
+                    if (resultadoDeBuscar.persona.TelefonoVerificado=="SI")
+                    {
+                        return BadRequest("El número de teléfono ya se encuentra registrado");
+                    }
+                    else
+                    {
+                        resultadoDeBuscar.persona.Denominacion = personaCreacion.Denominacion;
+                        resultadoDeBuscar.persona.Password = personaCreacion.Password;
+                        string codigoDeVerificacion= (new Random().Next(1000, 9999)).ToString();
+                        resultadoDeBuscar.persona.CodigoDeVerificacion = codigoDeVerificacion;
+                        //actualizarPersona
+
+                        var statusActualizacion = await _IPersonaRepositorio.Actualizar(resultadoDeBuscar.persona, true, true);
+                        if (statusActualizacion)
+                        {
+                            Services.EnviarSMS.EnviarCodigoDeVerificacion(resultadoDeBuscar.persona.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
+                            PersonaMostrar nuevoUsuarioDto = _mapper.Map<PersonaMostrar>(resultadoDeBuscar.persona);
+                            return CreatedAtAction(nameof(Post), new { id = nuevoUsuarioDto.Id }, nuevoUsuarioDto);
+                        }
+                        else
+                        {
+                            return BadRequest("Error al intentar crear cuenta");
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception exception) 
             {
-                PersonaMostrar nuevoUsuarioDto = _mapper.Map<PersonaMostrar>(nuevoPersona);
-                return CreatedAtAction(nameof(Post), new { id = nuevoUsuarioDto.Id }, nuevoUsuarioDto);
+                //Guardar mensaje ex
+                return BadRequest("Error inesperado al intentar crear cuenta");
             }
         }
 

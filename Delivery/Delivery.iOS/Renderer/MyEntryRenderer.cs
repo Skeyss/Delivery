@@ -20,9 +20,10 @@ namespace Delivery.iOS.Renderer
 
 			if (Control != null)
 			{
-				// do whatever you want to the UITextField here!
-				Control.BackgroundColor = UIColor.FromRGB(204, 153, 255);
-				Control.BorderStyle = UITextBorderStyle.Line;
+				//skeys verificar 
+				Control.BorderStyle = UITextBorderStyle.None;
+				Control.Layer.CornerRadius = 10;
+				Control.TextColor = UIColor.White;
 			}
 		}
 	}

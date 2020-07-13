@@ -19,7 +19,6 @@
             
             <ActivityIndicator 
                 IsRunning="True" 
-                Color="{StaticResource ColorAuxiliarDos}"
                 HorizontalOptions="CenterAndExpand"
                 ></ActivityIndicator>
 
@@ -27,7 +26,6 @@
                 x:Name="lblTextAMostar"
                 FontAttributes="Bold"
                 Text="{Binding }"
-                TextColor="{StaticResource ColorAuxiliarDos}"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="CenterAndExpand"
                 FontSize="Large">                

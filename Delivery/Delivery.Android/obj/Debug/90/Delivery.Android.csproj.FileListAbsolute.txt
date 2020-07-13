@@ -501,7 +501,9 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\De
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\com.companyname.delivery-Signed.aab
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\com.companyname.delivery-Signed.apk
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\Delivery.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\Delivery.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\bin\Debug\System.ComponentModel.Annotations.xml
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\build.props
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\adb.props
@@ -577,8 +579,11 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\De
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\mscorlib.pdb
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\netstandard.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.ComponentModel.Annotations.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.pdb
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.ComponentModel.DataAnnotations.dll
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.ComponentModel.DataAnnotations.pdb
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.Core.dll
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.Core.pdb
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\assets\System.Data.DataSetExtensions.dll
@@ -910,6 +915,8 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\De
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\WebAuthenticatorCallbackActivity.java
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\CustomTabsServiceConnectionImpl.java
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\KeepAliveService.java
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64b45e7e7d4943507b\GradientDrawable.java
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64b45e7e7d4943507b\MyEntryRenderer.java
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ButtonRenderer.java
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\FrameRenderer.java
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ImageRenderer.java
@@ -990,5 +997,3 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\De
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64b45e7e7d4943507b\MyEntryRenderer.java
-C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery.Android\obj\Debug\90\android\src\crc64b45e7e7d4943507b\GradientDrawable.java
