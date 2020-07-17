@@ -23,7 +23,7 @@ namespace Delivery.ViewModels.Incio
 
             try
             {
-                Application.Current.MainPage = new MainPage();
+             //   Application.Current.MainPage = new MainPage();
                
             }
             catch (Exception ex)

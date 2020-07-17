@@ -11,6 +11,7 @@ using Delivery_Datos.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Delivery_Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.Connections.Features;
 
 namespace DeliveryWebApi.Controllers
 {
@@ -29,85 +30,127 @@ namespace DeliveryWebApi.Controllers
         }
 
         // POST: api/Persona/Registrate
-        [AllowAnonymous]
-        [HttpPost("Registrate")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [Authorize(Roles ="Persona")]
+        [HttpPost("{Id}/VerificarCodigo")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<PersonaMostrar>> Post([FromBody] PersonaCreacion personaCreacion)
+        public async Task<ActionResult> Post(int Id,[FromBody] PersonaVerificacionDeCodigo personaVerificacionDeCodigo)
         {
             try
-            {                
-                if (personaCreacion == null)
+            {
+
+                if (
+                    User.Claims.FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value == "Persona"
+                    &&
+                    User.Claims.FirstOrDefault(X => X.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value != Id.ToString()
+                    )
+                {
+                    return BadRequest("Acceso denegado");
+
+                }
+
+                if (personaVerificacionDeCodigo == null)
                 {
                     return BadRequest("La solicitud es nula");
                 }
 
-                var resultadoDeBuscar = await _IPersonaRepositorio.ObtenerPersona(personaCreacion.Telefono);
-
-                if (resultadoDeBuscar.status == false)
+                if (Id!=personaVerificacionDeCodigo.Id)
                 {
-                    return BadRequest("No se pudo verificar el número de teléfono, intente de nuevo por favor");
+                    return BadRequest("El usuario que envió es distinto al usuario que va a modificar");
                 }
 
-                if (resultadoDeBuscar.persona==null)
-                {
-                    Persona personaAGuardar = _mapper.Map<Persona>(personaCreacion);
-                    if (personaAGuardar.Denominacion.ToString().Trim() == "")
-                    {
-                        personaAGuardar.Denominacion = personaAGuardar.Telefono;
-                    }
-                    personaAGuardar.TelefonoVerificado = "NO";
-                    personaAGuardar.TipoDeDocumentoCodigo = "0";
-                    string codigoDeVerificacion = (new Random().Next(1000, 9999)).ToString();
-                    personaAGuardar.CodigoDeVerificacion = codigoDeVerificacion;
 
-                    //GuardarPersona
-                    var nuevoPersona = await _IPersonaRepositorio.Agregar(personaAGuardar);
-                    if (nuevoPersona == null)
-                    {
-                        return BadRequest("Error al intentar crear cuenta");
-                    }
-                    else
-                    {
-                        Services.EnviarSMS.EnviarCodigoDeVerificacion(personaAGuardar.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
-                        PersonaMostrar nuevoUsuarioDto = _mapper.Map<PersonaMostrar>(nuevoPersona);
-                        return CreatedAtAction(nameof(Post), new { id = nuevoUsuarioDto.Id }, nuevoUsuarioDto);
-                    }
+
+
+                var validar = await _IPersonaRepositorio.ValidarCodigoDeTelefono(personaVerificacionDeCodigo.Id, personaVerificacionDeCodigo.CodigoDeVerificacion);
+
+                if (validar.status == false)
+                {
+                    return BadRequest("Ocurrió un problema al procesar la información. Intente de nuevo por favor");
+                }
+
+                if (validar.existe==false)
+                {
+                    return BadRequest("El usuario que intenta modificar no se encuentra registrado");
+                }
+
+                if (validar.verificado)
+                {
+                    return StatusCode(StatusCodes.Status200OK);
                 }
                 else
                 {
-                    if (resultadoDeBuscar.persona.TelefonoVerificado=="SI")
-                    {
-                        return BadRequest("El número de teléfono ya se encuentra registrado");
-                    }
-                    else
-                    {
-                        resultadoDeBuscar.persona.Denominacion = personaCreacion.Denominacion;
-                        resultadoDeBuscar.persona.Password = personaCreacion.Password;
-                        string codigoDeVerificacion= (new Random().Next(1000, 9999)).ToString();
-                        resultadoDeBuscar.persona.CodigoDeVerificacion = codigoDeVerificacion;
-                        //actualizarPersona
-
-                        var statusActualizacion = await _IPersonaRepositorio.Actualizar(resultadoDeBuscar.persona, true, true);
-                        if (statusActualizacion)
-                        {
-                            Services.EnviarSMS.EnviarCodigoDeVerificacion(resultadoDeBuscar.persona.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
-                            PersonaMostrar nuevoUsuarioDto = _mapper.Map<PersonaMostrar>(resultadoDeBuscar.persona);
-                            return CreatedAtAction(nameof(Post), new { id = nuevoUsuarioDto.Id }, nuevoUsuarioDto);
-                        }
-                        else
-                        {
-                            return BadRequest("Error al intentar crear cuenta");
-                        }
-                    }
+                    return BadRequest("El código ingresado es inválido");
                 }
+
             }
             catch (Exception exception) 
             {
                 //Guardar mensaje ex
-                return BadRequest("Error inesperado al intentar crear cuenta");
+                return BadRequest("Error inesperado al verificar código. Intente de nuevo por favor");
             }
         }
+
+        [Authorize(Roles = "Persona")]
+        [HttpGet("{Id}/VolverAEnviarCodigo")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> Get(int Id)
+        {
+            try
+            {
+
+                if (
+                    User.Claims.FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value == "Persona"
+                    &&
+                    User.Claims.FirstOrDefault(X => X.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value != Id.ToString()
+                    )
+                {
+                    return BadRequest("Acceso denegado");
+
+                }
+
+                var resultado = await _IPersonaRepositorio.ObtenerPersonaPorId(Id);
+
+                if (resultado.status==false)
+                {
+                    return BadRequest("Ocurrió un problema al procesar la información. Intente de nuevo por favor");
+                }
+
+                if (resultado.persona==null)
+                {
+                    return BadRequest("El usuario que intenta modificar no se encuentra registrado ");
+                }
+
+                if (resultado.persona.TelefonoVerificado == "SI")
+                {
+                    return BadRequest("El número de teléfono ya se encuentra registrado, Por favor inicie sesión ");
+                }
+                else
+                {
+                    string codigoDeVerificacion = (new Random().Next(1000, 9999)).ToString();
+                    resultado.persona.CodigoDeVerificacion = codigoDeVerificacion;
+
+                    var statusActualizacion = await _IPersonaRepositorio.Actualizar(resultado.persona, false, true);
+                    if (statusActualizacion)
+                    {
+                        Services.EnviarSMS.EnviarCodigoDeVerificacion(resultado.persona.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
+                        return StatusCode(StatusCodes.Status200OK);
+                    }
+                    else
+                    {
+                        return BadRequest("Error al enviar código. Intente de nuevo por favor");
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                //Guardar mensaje ex
+                return BadRequest("Error inesperado al enviar código. Intente de nuevo por favor");
+            }
+        }
+
 
     }
 }

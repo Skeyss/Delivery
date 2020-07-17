@@ -5,10 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.CrearCuentaPage"
-             xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
-              xmlns:ValidacionTriggers="clr-namespace:Delivery.Triggera"
-               xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
-             BackgroundColor="White" Title="Crear cuenta">
+            xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
+            xmlns:ValidacionTriggers="clr-namespace:Delivery.Triggera"
+            xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
+            BackgroundColor="{StaticResource ColorFondo}">
 
     <ContentPage.ToolbarItems>
 
@@ -57,166 +57,87 @@
     <Grid>
 
         <StackLayout  
-            Style="{StaticResource styleStackLayout}"
-            BackgroundColor="White"
-            WidthRequest="500">
+                        Style="{StaticResource styleStackLayout}"
+                        BackgroundColor="{StaticResource ColorFondo}"
+                        WidthRequest="500">
 
 
 
+
+           
+            
+            <Label Text="Crear cuenta"
+                   FontSize="Caption"
+                   FontAttributes="Bold"></Label>
 
             <Label Text="Registro de celular" 
-                   FontSize="Large"
-                   
-                   TextColor="{StaticResource ColorTerciario}">
-            </Label>
+                   FontSize="Large"                   
+                   TextColor="Black"></Label>
 
-            <BoxView HeightRequest="20" BackgroundColor="Transparent"></BoxView>
-
-
-
-            <Label Text="Número de celular " 
-                   TextColor="{StaticResource ColorAuxiliarDos}"
-                   >
-                <Label.Triggers>
-
-                    <!--<DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=Text.Length}" Value="0">
-                            <Setter Property="TextColor" Value="Red"></Setter>
-                        </DataTrigger>-->
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="True">
-                        <Setter Property="FontSize" Value="Medium"></Setter>
-                    </DataTrigger>
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="False">
-                        <Setter Property="FontSize" Value="Small"></Setter>
-                    </DataTrigger>
-
-                </Label.Triggers>
-
-            </Label>
-
-            <Entry x:Name="entryNumeroDeTelefono"
-                       Text="{Binding NumeroDeTelefono}"
-                       Placeholder="999999999"
-                     
-                        FontSize="30"    
-                       
-                        ReturnType="Send"
-                        MaxLength="9"
-                        Keyboard="Numeric"
-                        HorizontalOptions="{OnPlatform Start, Android=Start, iOS=Start, UWP=FillAndExpand}">
-            </Entry>
-
-            <Label  x:Name="lblErrorNumeroDeTelefono" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
-            
             <Label Text="Ingresa tu número de celular para verificar tu cuenta y estar en contacto"
-                       TextColor="Black"
-                       FontSize="Micro">
+                   TextColor="Black"
+                   FontSize="Micro"></Label>
+
+
+         
+
+
+            <Frame HasShadow="True" Padding="15"  Margin="0,20,0,5" CornerRadius="5" BackgroundColor="White">
+
+                <StackLayout Padding="0" Margin="0">
+
+                    <Label x:Name="lblNumeroDeTelefono"
+                           Text="Número de teléfono"
+                           VerticalOptions="End"
+                           TextColor="{StaticResource ColorAuxiliarDos}"
+                           FontSize="Caption"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start">
+
+                        <Label.Triggers>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="True">
+                                <Setter Property="FontSize" Value="Small"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="False">
+                                <Setter Property="FontSize" Value="Caption"></Setter>
+                            </DataTrigger>
+
+                        </Label.Triggers>
+
+                    </Label>
+
+                    <Renderer:MyEntry  x:Name="entryNumeroDeTelefono"
+                                       Text="{Binding NumeroDeTelefono}"
+                                       Placeholder="999 999 999"
+                                       ReturnType="Next"
+                                       MaxLength="9"
+                                       Keyboard="Numeric"
+                                       HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"
+                                       ></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorNumeroDeTelefono" 
+                            TextColor="Red" 
+                            IsVisible="False"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
+
+
+            <Label Margin="0,0,0,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextColor="Black" Text="Al ingresar mi número estoy aceptando los  "/>
+                        <Span TextColor="{StaticResource ColorAuxiliarDos}" FontAttributes="Bold" Text="Términos y condiciones."/>
+                    </FormattedString>
+                </Label.FormattedText>
             </Label>
 
 
-            
-            
-            <Label Text="Nombre" 
-                   TextColor="{StaticResource ColorAuxiliarDos}"
-                   >
 
-                <Label.Triggers>
-
-                    <!--<DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNombre}, Path=Text.Length}" Value="0">
-                        <Setter Property="TextColor" Value="Red"></Setter>
-                    </DataTrigger>-->
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNombre}, Path=IsFocused}" Value="True">
-                        <Setter Property="FontSize" Value="Medium"></Setter>
-                    </DataTrigger>
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNombre}, Path=IsFocused}" Value="False">
-                        <Setter Property="FontSize" Value="Small"></Setter>
-                    </DataTrigger>
-
-                </Label.Triggers>
-
-            </Label>
-
-            <Entry   x:Name="entryNombre"   
-                     Text="{Binding Nombre}"
-                    BackgroundColor="White"                         
-                    Placeholder="                                                         "                        
-                    ReturnType="Send"                    
-                    MaxLength="100"
-                    Keyboard="Text"
-                     
-                      HorizontalOptions="{OnPlatform Start, Android=Start, iOS=Start, UWP=FillAndExpand}"
-                    ></Entry>
-
-            <Label  x:Name="lblErrorNombre" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
-
-
-
-            <Label Text="Contraseña" 
-                   TextColor="{StaticResource ColorAuxiliarDos}"
-                   >
-
-                <Label.Triggers>
-
-                    <!--<DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenha}, Path=Text.Length}" Value="0">
-                        <Setter Property="TextColor" Value="Red"></Setter>
-                    </DataTrigger>-->
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenha}, Path=IsFocused}" Value="True">
-                        <Setter Property="FontSize" Value="Medium"></Setter>
-                    </DataTrigger>
-
-                    <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenha}, Path=IsFocused}" Value="False">
-                        <Setter Property="FontSize" Value="Small"></Setter>
-                    </DataTrigger>
-
-                </Label.Triggers>
-
-            </Label>
-
-            <Entry   x:Name="entryConstrasenha"
-                     Text="{Binding Contrasenha}"
-                    BackgroundColor="White" 
-                    Placeholder="                                                         "                        
-                    ReturnType="Send"                    
-                    MaxLength="30"
-                    Keyboard="Text"
-                    IsPassword="True"  
-                     
-                     HorizontalOptions="{OnPlatform Start, Android=Start, iOS=Start, UWP=FillAndExpand}" 
-                    ></Entry>
-
-            <Label  x:Name="lblErrorContrasenha" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
-
-
-
-            <StackLayout Margin="0" Padding="0" Orientation="Horizontal">
-
-                <CheckBox 
-                    IsChecked="{Binding AceptoLosTerminosDeUso}"
-                    Color="{StaticResource ColorAuxiliarDos}" 
-                    VerticalOptions="Center"
-                    ></CheckBox>
-
-                <Label 
-                    VerticalTextAlignment="Center"
-                    TextColor="Black" 
-                    Text="Acepto los términos de uso"                    
-                    ></Label>
-                
-            </StackLayout>
-
-            <Label  x:Name="lblErrorAceptoLosTerminosDeUso" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
 
 
 

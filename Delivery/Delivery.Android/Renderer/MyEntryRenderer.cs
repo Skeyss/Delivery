@@ -26,6 +26,8 @@ namespace Delivery.Droid.Renderer
                 if (Control != null)
                 {
                     Control.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
+
+                   
                 }
             }
         }

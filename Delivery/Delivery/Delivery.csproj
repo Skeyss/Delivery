@@ -18,11 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModels\Incio\CrearPersona\CrearCuentaPageViewModel - Copia.cs" />
+    <Compile Remove="Views\Inicio\CrearCuentaPage - Copia.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Inicio\CrearCuentaPage - Copia.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Extensions\Imagenes\Image\collapse.png" />
     <None Remove="Extensions\Imagenes\Image\collapse.png.png" />
     <None Remove="Extensions\Imagenes\Image\expand.png" />
     <None Remove="Extensions\Imagenes\Image\expand.png.png" />
     <None Remove="Extensions\Imagenes\Image\expandsss.png" />
+    <None Remove="Extensions\Imagenes\Image\imagenPorDefinir.png" />
     <None Remove="Extensions\Imagenes\Image\kindpng_3777041.png" />
   </ItemGroup>
 
@@ -82,5 +92,9 @@
     <Reference Include="System.ComponentModel.Annotations">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.netcore.universalwindowsplatform\6.2.10\ref\uap10.0.15138\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Extensions\Imagenes\Image\imagenPorDefinir.png" />
   </ItemGroup>
 </Project>

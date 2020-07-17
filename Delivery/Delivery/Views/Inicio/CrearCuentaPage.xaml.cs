@@ -54,48 +54,6 @@ namespace Delivery.Views.Inicio
 
                         break;
                     }
-                case nameof(crearCuentaPageViewModel.Nombre):
-                    {
-                        if (propErrores)
-                        {
-                            lblErrorNombre.IsVisible = true;
-                            lblErrorNombre.Text = propText;
-                        }
-                        else
-                        {
-                            lblErrorNombre.IsVisible = false;
-                            lblErrorNombre.Text = "";
-                        }
-                        break;
-                    }
-                case nameof(crearCuentaPageViewModel.Contrasenha):
-                    {
-                        if (propErrores)
-                        {
-                            lblErrorContrasenha.IsVisible = true;
-                            lblErrorContrasenha.Text = propText;
-                        }
-                        else
-                        {
-                            lblErrorContrasenha.IsVisible = false;
-                            lblErrorContrasenha.Text = "";
-                        }
-                        break;
-                    }
-                case nameof(crearCuentaPageViewModel.AceptoLosTerminosDeUso):
-                    {
-                        if (propErrores)
-                        {
-                            lblErrorAceptoLosTerminosDeUso.IsVisible = true;
-                            lblErrorAceptoLosTerminosDeUso.Text = propText;
-                        }
-                        else
-                        {
-                            lblErrorAceptoLosTerminosDeUso.IsVisible = false;
-                            lblErrorAceptoLosTerminosDeUso.Text = "";
-                        }
-                        break;
-                    }
                 default:
                     {
                         break;

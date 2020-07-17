@@ -18,9 +18,6 @@ namespace Delivery.ViewModels.Incio.CrearPersona
 
         #region
         private string numeroDeTelefono;
-        private string nombre;
-        private string contrasenha;
-        private bool aceptoLosTerminosDeUso;
 
         //[Required(ErrorMessage = "Campo obligatorio")]
         [MinLength(9, ErrorMessage = "Ingrese nueve dígitos")]      
@@ -39,53 +36,12 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                 OnPropertyChanged();
             }
         }
-
-        [MinLength(1,ErrorMessage = "Ingrese su nombre")]
-        public string Nombre
-        {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                nombre = value;
-                Validacion(Nombre, () => true, "");
-                OnPropertyChanged();
-            }
-        }
-
-        [MinLength(6,ErrorMessage = "La contraseña debe de tener un mínimo de 6 caracteres")]
-        public string Contrasenha
-        {
-            get => contrasenha; 
-            set
-            {
-                contrasenha = value;
-                Validacion(Contrasenha, () => true , "");
-                OnPropertyChanged();
-            }
-        }
-
-        public bool AceptoLosTerminosDeUso
-        {
-            get => aceptoLosTerminosDeUso; 
-            set
-            {
-                aceptoLosTerminosDeUso = value;
-                Validacion(AceptoLosTerminosDeUso,() => AceptoLosTerminosDeUso, "Acepte los términos de uso");
-                OnPropertyChanged();
-            }
-        }
+   
 
         private void RevizarValidacionDeControles()
         {
             try
             {
-                Validacion(Nombre == null ? "" : Nombre, () => true, "asd", "Nombre");
-                Validacion(Contrasenha == null ? "" : Contrasenha, () => true, "gg", "Contrasenha");
-                Validacion(AceptoLosTerminosDeUso, () => AceptoLosTerminosDeUso, "Acepte los términos de uso", "AceptoLosTerminosDeUso");
                 Validacion(NumeroDeTelefono == null ? "" : NumeroDeTelefono, () => true, "Ingrese un número de Teléfono válido", "NumeroDeTelefono");
             }
             catch (Exception ex)
@@ -114,6 +70,8 @@ namespace Delivery.ViewModels.Incio.CrearPersona
 
         private async void CrearCuenta() 
         {
+          
+
             try
             {
                 RevizarValidacionDeControles();
@@ -125,19 +83,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                     IsBusy = false;
                     if (service.Status)
                     {
-
-                        var inicioDeSesion = await Services.PersonaService.IncioDeSesion(personaAGuardar.Telefono, personaAGuardar.Password);
-
-                        if (inicioDeSesion.Status)
-                        {
-                            //login automatico
-                            await Application.Current.MainPage.Navigation.PushModalAsync(new VerificacionCodigoPage());
-
-                        }
-                        else
-                        {
-                            await Application.Current.MainPage.DisplayAlert("Error", inicioDeSesion.mensaje, "Ok");
-                        }
+                        await Application.Current.MainPage.Navigation.PushAsync(new VerificacionCodigoPage(personaAGuardar.Telefono));                     
                     }
                     else
                     {
@@ -155,15 +101,13 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                 //Guardar mensaje ex
                 await Application.Current.MainPage.DisplayAlert(" ", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
             }
-         
+
         }
 
         private CreacionPersona PasarDatosDeInterfazAEntidad()
         {
             CreacionPersona resultado = new CreacionPersona();
-            resultado.Denominacion = Nombre;
             resultado.Telefono = NumeroDeTelefono;
-            resultado.Password = Contrasenha;
             return resultado;
         }
      

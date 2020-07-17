@@ -41,6 +41,10 @@ namespace Delivery.Core.HttpClientGeneral
                         var resposeContent = await response.Content?.ReadAsStringAsync();
                         return (false, resposeContent);
                     }
+                    else if (statusCode==403)
+                    {
+                        return (false, "Acceso denegado ");
+                    }
                     else
                     {
                         //Guardar mensaje ex
@@ -92,6 +96,10 @@ namespace Delivery.Core.HttpClientGeneral
                         var resposeContent = await response.Content?.ReadAsStringAsync();
                         return (false, resposeContent,default);
                     }
+                    else if (statusCode == 403)
+                    {
+                        return (false, "Acceso denegado ", default);
+                    }
                     else
                     {
                         //Guardar mensaje ex
@@ -140,6 +148,10 @@ namespace Delivery.Core.HttpClientGeneral
                     {
                         var resposeContent = await response.Content?.ReadAsStringAsync();
                         return (false, resposeContent, "");
+                    }
+                    else if (statusCode == 403)
+                    {
+                        return (false, "Acceso denegado","");
                     }
                     else
                     {

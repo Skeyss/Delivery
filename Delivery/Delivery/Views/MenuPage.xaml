@@ -82,6 +82,10 @@
                         <ImageCell  ImageSource="HuellaDeOso" Text="Carrito" />
                         <ImageCell  ImageSource="HuellaDeOso" Text="Cerrar sesión" />
 
+                        <EntryCell Text="asd" Label="asd"></EntryCell>
+
+                 
+
                     </TableSection>
                     
                     

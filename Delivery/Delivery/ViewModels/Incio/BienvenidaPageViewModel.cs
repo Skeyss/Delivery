@@ -35,22 +35,26 @@ namespace Delivery.ViewModels.Incio
             Navigation = _Navigation;
             CommandCrearCuenta = new Command(NavegarCrearCuentaPage);
             CommandIniciarSesion = new Command(NavegarIncioDeSesion);
-            ActivarBTnCrearCuenta = true;
+            // ActivarBTnCrearCuenta = true;
+            ActivarBTnCrearCuenta = false;
 
 
         }
 
         private async void NavegarCrearCuentaPage()
         {
+
             try
             {
-                if (ActivarBTnCrearCuenta==true)
-                {
-                    ActivarBTnCrearCuenta = false;
-                    await Navigation.PushModalAsync(crearCuentaPage, true);
-                    ActivarBTnCrearCuenta = true;
-                }
-             
+                //if (ActivarBTnCrearCuenta == true)
+                //{
+                //    ActivarBTnCrearCuenta = false;
+                IsBusy = true;
+                    await Navigation.PushAsync(crearCuentaPage, true);
+                IsBusy = false;
+                //    ActivarBTnCrearCuenta = true;
+                //}
+
             }
             catch (Exception ex)
             {

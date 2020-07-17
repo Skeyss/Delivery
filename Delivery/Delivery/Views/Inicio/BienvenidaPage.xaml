@@ -6,6 +6,7 @@
              xmlns:Incio="clr-namespace:Delivery.Views.Inicio"
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.BienvenidaPage"
+             BackgroundColor="{StaticResource ColorPrimario}"
              >
 
 
@@ -25,7 +26,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout  >
+        <StackLayout  Style="{StaticResource styleStackLayout}"   WidthRequest="500" BackgroundColor="{StaticResource ColorPrimario}">
 
             <CarouselView ItemsSource="{Binding .Bienvenidas}" IndicatorView="indicatorView">               
              
@@ -88,21 +89,21 @@
             </IndicatorView>
             
             
-            <StackLayout x:Name="StackLayoutBotones"
+            <StackLayout x:Name="StackLayoutBotones" 
                 Orientation="Horizontal"
                 VerticalOptions="EndAndExpand"
-                Padding="20,10,20,20" >
+                IsEnabled="True">
 
-                <Button 
-                        x:Name="btnCrearCuenta"
+                <Button Style="{StaticResource styleBtnPrimario}"
                         
-                        Text="Crear cuenta"  
+                        x:Name="btnCrearCuenta"  
+                        Text="Crear cuentaaa"  
                         HorizontalOptions="FillAndExpand"
                         Command="{Binding .CommandCrearCuenta}"
                         >
                     </Button>
 
-                    <Button
+                    <Button Style="{StaticResource styleBtnSecundario}" 
                         x:Name="btnInciarSesion"
                         Text="Iniciar sesión"
                         HorizontalOptions="FillAndExpand"

@@ -20,6 +20,8 @@ namespace Delivery
 
         public App()
         {
+
+
             InitializeComponent();
             Device.SetFlags(new string[] { "Expander_Experimental" });
             Device.SetFlags(new string[] { "IndicatorView_Experimental" });
@@ -35,8 +37,8 @@ namespace Delivery
 
             //skeys ver donde poner esto y se sale con el boton de volver aTraz
             Core.ConnectivityTest asd= new Core.ConnectivityTest();
-          //  MainPage = new NavigationPage( new BienvenidaPage());
-            MainPage = new NavigationPage(new VerificacionCodigoPage());
+            MainPage = new NavigationPage( new BienvenidaPage());
+           // MainPage = new NavigationPage(new VerificacionCodigoPage("70176196"));
      
 
         }

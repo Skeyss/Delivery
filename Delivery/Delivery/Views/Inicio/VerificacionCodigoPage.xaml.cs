@@ -16,16 +16,19 @@ namespace Delivery.Views.Inicio
         VerificacionCodigoPageViewModel verificacionCodigoPageViewModel = new VerificacionCodigoPageViewModel();
 
        
-        public VerificacionCodigoPage()
+        public VerificacionCodigoPage(string NumeroDeTelefono)
         {
             InitializeComponent();
-            //verificacionCodigoPageViewModel.NumeroTelefonoAValidar = NumeroDeTelefono;
+            verificacionCodigoPageViewModel.NumeroTelefonoAValidar = NumeroDeTelefono;
             this.BindingContext = verificacionCodigoPageViewModel;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            this.Opacity = 0;
+            await this.FadeTo(1, 500, Easing.CubicIn);
+                
             verificacionCodigoPageViewModel.ErrorsChanged += VerificacionCodigoPage_ErrorsChanged;
         }
 
@@ -44,55 +47,22 @@ namespace Delivery.Views.Inicio
 
             switch (e.PropertyName)
             {
-                case nameof(verificacionCodigoPageViewModel.NumeroUno):
+                case nameof(verificacionCodigoPageViewModel.CodigoVerificar):
                     {
                         if (propErrores)
                         {
-                            frameUno.BorderColor = Color.Red;
+                            lblErrorCodigo.IsVisible = true;
+                            lblErrorCodigo.Text = propText;
                         }
                         else
                         {
-                            frameUno.BorderColor = (Color)App.Current.Resources["ColorAuxiliarDos"];
+                            lblErrorCodigo.IsVisible = false;
+                            lblErrorCodigo.Text = "";
                         }
 
                         break;
                     }
-                case nameof(verificacionCodigoPageViewModel.NumeroDos):
-                    {
-                        if (propErrores)
-                        {
-                            frameDos.BorderColor = Color.Red;
-                        }
-                        else
-                        {
-                            frameDos.BorderColor = (Color)App.Current.Resources["ColorAuxiliarDos"];
-                        }
-                        break;
-                    }
-                case nameof(verificacionCodigoPageViewModel.NumeroTres):
-                    {
-                        if (propErrores)
-                        {
-                            frameTres.BorderColor = Color.Red;
-                        }
-                        else
-                        {
-                            frameTres.BorderColor = (Color)App.Current.Resources["ColorAuxiliarDos"];
-                        }
-                        break;
-                    }
-                case nameof(verificacionCodigoPageViewModel.NumeroCuatro):
-                    {
-                        if (propErrores)
-                        {
-                            frameCuatro.BorderColor = Color.Red;
-                        }
-                        else
-                        {
-                            frameCuatro.BorderColor = (Color)App.Current.Resources["ColorAuxiliarDos"];
-                        }
-                        break;
-                    }
+            
                 default:
                     {
                         break;
@@ -112,72 +82,72 @@ namespace Delivery.Views.Inicio
 
        
 
-        private void entryNumeroUno_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (e.NewTextValue!=null)
-            {
-                if (e.NewTextValue.Length==1)
-                {
-                    entryNumeroDos.Focus();
-                    entryNumeroDos.CursorPosition = 1;
-                }
-                else
-                {
-                    entryNumeroUno.Focus();
-                }
-            }
-        }
+        //private void entryNumeroUno_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (e.NewTextValue!=null)
+        //    {
+        //        if (e.NewTextValue.Length==1)
+        //        {
+        //            entryNumeroDos.Focus();
+        //            entryNumeroDos.CursorPosition = 1;
+        //        }
+        //        else
+        //        {
+        //            entryNumeroUno.Focus();
+        //        }
+        //    }
+        //}
 
-        private void entryNumeroDos_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (e.NewTextValue != null)
-            {
+        //private void entryNumeroDos_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (e.NewTextValue != null)
+        //    {
                 
-                if (e.NewTextValue.Length == 1)
-                {
-                    entryNumeroTres.Focus();
-                    entryNumeroTres.CursorPosition = 1;
-                }
-                else if (e.NewTextValue.Length == 0)
-                {
-                    entryNumeroUno.Focus();
-                    entryNumeroUno.CursorPosition = 1;
-                }
-            }
-        }
+        //        if (e.NewTextValue.Length == 1)
+        //        {
+        //            entryNumeroTres.Focus();
+        //            entryNumeroTres.CursorPosition = 1;
+        //        }
+        //        else if (e.NewTextValue.Length == 0)
+        //        {
+        //            entryNumeroUno.Focus();
+        //            entryNumeroUno.CursorPosition = 1;
+        //        }
+        //    }
+        //}
 
-        private void entryNumeroTres_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (e.NewTextValue != null)
-            {
-                if (e.NewTextValue.Length == 1)
-                {
-                    entryNumeroCuatro.Focus();
-                    entryNumeroCuatro.CursorPosition = 1;
-                }
-                else if (e.NewTextValue.Length == 0)
-                {
-                    entryNumeroDos.Focus();
-                    entryNumeroDos.CursorPosition = 1;
-                }
-            }
-        }
+        //private void entryNumeroTres_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (e.NewTextValue != null)
+        //    {
+        //        if (e.NewTextValue.Length == 1)
+        //        {
+        //            entryNumeroCuatro.Focus();
+        //            entryNumeroCuatro.CursorPosition = 1;
+        //        }
+        //        else if (e.NewTextValue.Length == 0)
+        //        {
+        //            entryNumeroDos.Focus();
+        //            entryNumeroDos.CursorPosition = 1;
+        //        }
+        //    }
+        //}
 
-        private void entryNumeroCuatro_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (e.NewTextValue != null)
-            {
-                if (e.NewTextValue.Length == 0)
-                {
-                    entryNumeroTres.Focus();
-                    entryNumeroTres.CursorPosition = 1;
-                }
-            }
-        }
+        //private void entryNumeroCuatro_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (e.NewTextValue != null)
+        //    {
+        //        if (e.NewTextValue.Length == 0)
+        //        {
+        //            entryNumeroTres.Focus();
+        //            entryNumeroTres.CursorPosition = 1;
+        //        }
+        //    }
+        //}
 
-        private void entryNumeroUno_Completed(object sender, EventArgs e)
-        {
+        //private void entryNumeroUno_Completed(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

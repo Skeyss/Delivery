@@ -21,7 +21,8 @@ namespace Delivery.UWP.Renderer
 
             if (Control != null)
             {
-
+               Control.BorderBrush = new SolidColorBrush(Windows.UI.ColorHelper.FromArgb(255, 255, 255,255));             
+              
             }
         }
     }

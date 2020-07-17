@@ -24,18 +24,20 @@
             <Color x:Key="ColorAuxiliarDos">#04D9B2</Color>
             <Color x:Key="ColorAuxiliarTres">#F2C53D</Color>
 
-
+            <Color x:Key="ColorFondo">GhostWhite</Color>
 
             <Style TargetType="Button" x:Key="styleBtnPrimario">
                 <Setter Property="BackgroundColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
                 <Setter Property="TextColor" Value="White"></Setter>
-            </Style>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+            </Style>             
 
             <Style TargetType="Button" x:Key="styleBtnSecundario">
-                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimario}"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
                 <Setter Property="BorderWidth" Value="2"></Setter>
                 <Setter Property="BorderColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
             </Style>
 
 

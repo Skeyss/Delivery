@@ -80,6 +80,20 @@ namespace Delivery_Datos.Repositorio
             }
         }
 
+        public async Task<(bool status, Persona persona)> ObtenerPersonaPorId(int Id)
+        {
+            try
+            {
+                var persona = await _contexto.Persona.SingleOrDefaultAsync(c => c.Id == Id);
+                return (true, persona);
+            }
+            catch (Exception exception)
+            {
+                //Guardar mensaje ex
+                return (false, null);
+            }
+        }
+
         public async Task<(bool status, Persona persona)> ValidarIncioDeSesion(string Telefono, string Password)
         {
             try
@@ -111,6 +125,40 @@ namespace Delivery_Datos.Repositorio
             }
         }
 
+        public async Task<(bool status,bool existe, bool verificado)> ValidarCodigoDeTelefono(int Id, string Codigo)
+        {
+            try
+            {
+                var PersonaBd = await _contexto.Persona.FirstOrDefaultAsync(u => u.Id == Id);
+                if (PersonaBd != null)
+                {
+
+                    var resultado = _passwordHasher.VerifyHashedPassword(PersonaBd, PersonaBd.CodigoDeVerificacion, Codigo);
+                    if (resultado == PasswordVerificationResult.Success)
+                    {
+                        PersonaBd.TelefonoVerificado = "SI";
+                        _contexto.Persona.Attach(PersonaBd);
+                        _contexto.Entry(PersonaBd).State = EntityState.Modified;
+                        return await _contexto.SaveChangesAsync() > 0 ? (true, true,true) : (false, true, true);
+                    }
+                    else
+                    {
+                        return (true,true, false);
+                    }
+
+                }
+                else
+                {
+                    return (true, false,false);
+                }
+            }
+            catch (Exception excepcion)
+            {
+                //Guardar mensaje ex
+                return (false,false, false);
+            }
+        }
+
         public async Task<(bool,bool)> ExisteTelefono(string numeroDeTelefono)
         {
             try
@@ -125,11 +173,6 @@ namespace Delivery_Datos.Repositorio
          
         }
 
-
-
-
- 
-
-      
+       
     }
 }
