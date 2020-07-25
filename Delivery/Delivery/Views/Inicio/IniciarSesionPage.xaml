@@ -3,34 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-              xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
-              xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
+             xmlns:Imagenes="clr-namespace:Delivery.Extensions.Imagenes"
+             xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.IniciarSesionPage"
-             BackgroundColor="{StaticResource ColorFondo}"
-             
-             
-             >
+             BackgroundColor="{StaticResource ColorFondo}" >
 
-    
+
 
 
     <ContentPage.Resources>
 
         <ResourceDictionary>
 
-            <Style TargetType="Label">
-                <!--<Setter Property="Margin" Value="20,0,20,0"></Setter>-->
-                <Setter Property="TextColor" Value="{StaticResource ColorAuxiliarDos}"></Setter>
-                <Setter Property="FontSize" Value="Caption"></Setter>
-                <Setter Property="FontAttributes" Value="Bold"></Setter>                
-                <Setter Property="HorizontalOptions" Value="Start"></Setter>
-            </Style>
-
-            <Style TargetType="Entry">
-                <!--<Setter Property="Margin" Value="20,0,20,0"></Setter>-->
-                <Setter Property="FontSize" Value="Title"></Setter>
-                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="BorderColor" Value="WhiteSmoke"></Setter>
+                <Setter Property="Padding" Value="15"></Setter>
             </Style>
 
 
@@ -38,106 +29,146 @@
 
     </ContentPage.Resources>
 
-    <ContentPage.Content >
+    <Grid>
 
-        <StackLayout  Style="{d:StaticResource styleStackLayout}"
-                      WidthRequest="500"
-                      BackgroundColor="{StaticResource ColorFondo}" 
-                      VerticalOptions="FillAndExpand">
-            
-           
-            <!--<Image x:Name="ImageInicioDeSesion"
-                   HeightRequest="200"
-                   WidthRequest="300"
-                   Aspect="Fill"
-                   Source="{Imagenes:ImageResource Source=Extensions.Imagenes.Image.imagenPorDefinir.png}"              
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand">
-            </Image>-->
+        <StackLayout  Style="{StaticResource styleStackLayout500}"
+                      BackgroundColor="{StaticResource ColorFondo}">
+
+      
 
             <Label Text="Iniciar sesión "
                    FontSize="Title"
                    VerticalOptions="EndAndExpand"
                    HorizontalOptions="Center"
-                   Margin="20,30"
-                   TextColor="Black"
-                   ></Label>
+                   TextColor="{StaticResource ColorPrimario}"
+                   FontAttributes="Bold"></Label>
 
-            <Frame HasShadow="True" Padding="15"  CornerRadius="5" BackgroundColor="White">
-                
+
+            <Frame Margin="0,0,0,5">
+
                 <StackLayout Padding="0" Margin="0">
 
                     <Label x:Name="lblNumeroDeTelefono"
                            Text="Número de teléfono"
                            VerticalOptions="End"
-                           ></Label>
+                           TextColor="{StaticResource ColorAuxiliarDos}"
+                           FontSize="Caption"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start">
 
+                        <Label.Triggers>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="True">
+                                <Setter Property="FontSize" Value="Small"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryNumeroDeTelefono}, Path=IsFocused}" Value="False">
+                                <Setter Property="FontSize" Value="Caption"></Setter>
+                            </DataTrigger>
+
+                        </Label.Triggers>
+
+                    </Label>
 
                     <Renderer:MyEntry  x:Name="entryNumeroDeTelefono"
+                                       Text="{Binding NumeroDeTelefono}"
                                        Placeholder="999 999 999"
                                        ReturnType="Next"
                                        MaxLength="9"
                                        Keyboard="Numeric"
-                                       HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"
-                                       ></Renderer:MyEntry>
+                                       HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}" ></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorNumeroDeTelefono" 
+                            TextColor="{StaticResource ColorAuxiliarUno}" 
+                            IsVisible="False"></Label>
 
                 </StackLayout>
-                
+
             </Frame>
 
-            <Frame HasShadow="True" Padding="15" CornerRadius="5" BackgroundColor="White">
+            <Frame Margin="0,0,0,5">
 
-                <StackLayout Padding="0" Margin="0">
+                <StackLayout  Padding="0" Margin="0">
 
-                    <Label Text="Contraseña"                             ></Label>
+                    <Label Text="Contraseña" 
+                           VerticalOptions="End"
+                           TextColor="{StaticResource ColorAuxiliarDos}"
+                           FontSize="Caption"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start">
 
-                    <Renderer:MyEntry Placeholder="**********************" 
-                           HorizontalOptions="FillAndExpand"                   
-                            ReturnType="Send"                    
-                            MaxLength="30"
-                            Keyboard="Text"
-                            IsPassword="True"
-                           ></Renderer:MyEntry>
+                        <Label.Triggers>
 
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenha}, Path=IsFocused}" Value="True">
+                                <Setter Property="FontSize" Value="Small"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenha}, Path=IsFocused}" Value="False">
+                                <Setter Property="FontSize" Value="Caption"></Setter>
+                            </DataTrigger>
+
+                        </Label.Triggers>
+
+                    </Label>
+
+                    <Renderer:MyEntry   x:Name="entryConstrasenha"
+                                        Text="{Binding Contrasenha}"
+                                        Placeholder="*******************"                        
+                                        ReturnType="Next"                    
+                                        MaxLength="30"
+                                        Keyboard="Text"
+                                        IsPassword="True"                       
+                                        HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorContrasenha" 
+                            TextColor="{StaticResource ColorAuxiliarUno}" 
+                            IsVisible="False"></Label>
 
                 </StackLayout>
-                
+
             </Frame>
-          
-            
-          
-
-            <Label  x:Name="lblErrorNumeroDeTelefono" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
-
-           
-
-            <Label  x:Name="lblErrorNumeroDaaeTelefono" 
-                    TextColor="Red" 
-                    IsVisible="False"></Label>
-
-
-
-
 
             <Button x:Name="btnIniciarSesion"
                     Text="Ingresar"
                     Command="{Binding CommandLogin}"
-                    Style="{StaticResource styleBtnPrimario}">                
-            </Button>
+                    Style="{StaticResource styleBtnPrimario}"></Button>
 
-            <Button x:Name="btnOlvidateTuContrasenha"
-                    Text="¿Olvidaste tu clave?" 
-                    FontSize="Small" 
-                    BackgroundColor="Transparent"
-                    VerticalOptions="StartAndExpand"
-                    TextColor="{StaticResource ColorAuxiliarDos}">
-            </Button>
-            
+            <Label Text="¿Olvidaste tu clave?" 
+                   Margin="0,0,15,0"
+                   TextDecorations="Underline" 
+                   FontSize="Small"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="End"
+                   TextColor="{StaticResource ColorAuxiliarDos}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CommandOlvidarContrasenha}">
+
+                    </TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>            
+             
+
         </StackLayout>
-        
-    </ContentPage.Content>
-    
-    
+
+        <Grid Opacity=".7" BackgroundColor="White" IsVisible="{Binding IsBusy}">
+
+            <StackLayout  
+                          Margin="0"
+                          Padding="0"
+                          BackgroundColor="White"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                   Color="{StaticResource ColorAuxiliarDos}"  
+                                   Scale="{OnPlatform 1, Android=0.5, iOS=1, UWP=2}" 
+                                   FlowDirection="RightToLeft" />
+            </StackLayout>
+
+        </Grid>
+
+
+    </Grid>
+
+
 </ContentPage>

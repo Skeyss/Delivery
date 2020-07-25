@@ -18,18 +18,20 @@ namespace Delivery_Datos.Repositorio
             _contexto = contexto;
         }
 
-   
 
-        public async Task<List<Pantalladebienvenida>> ObtenerTodoAsync()
+
+
+        public async Task<(bool Status, List<Pantalladebienvenida> List)> ObtenerTodoAsync()
         {
             try
             {
-                return await _contexto.Pantalladebienvenida.OrderBy(c => c.OrdenDeVisualizacion).ToListAsync();
+                var result= await _contexto.Pantalladebienvenida.OrderBy(c => c.OrdenDeVisualizacion).ToListAsync();
+                return (true, result);
             }
 
             catch (Exception exception)
             {
-                return null;
+                return (false ,null);
             }
         }
     }

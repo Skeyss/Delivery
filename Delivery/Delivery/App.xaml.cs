@@ -28,19 +28,26 @@ namespace Delivery
             Device.SetFlags(new string[] { "Shapes_Experimental" });
             // Device.SetFlags(new string[] { "Shapes_Experimental" });
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-
-            else
-                DependencyService.Register<AzureDataStore>();
-            // MainPage = new MainPage();
-
             //skeys ver donde poner esto y se sale con el boton de volver aTraz
-            Core.ConnectivityTest asd= new Core.ConnectivityTest();
-            MainPage = new NavigationPage( new BienvenidaPage());
-           // MainPage = new NavigationPage(new VerificacionCodigoPage("70176196"));
-     
+            Core.ConnectivityTest asd = new Core.ConnectivityTest();
 
+
+            bool IncioDeSesion = false;
+            var buscar = SecureStorage.GetAsync(AppSettings.nameIncioDeSesionAutomatico);
+            if (buscar.ToString() == "SI")
+            {
+                IncioDeSesion = true;
+            }
+
+            if (IncioDeSesion==false)
+            {
+                SecureStorage.RemoveAll();
+                MainPage = new NavigationPage(new BienvenidaPage());
+            }
+            else
+            {
+                
+            }
         }
 
         private object ConnectivityTest()

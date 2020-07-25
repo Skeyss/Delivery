@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Delivery.Views.Inicio.RegistroPage.xaml", "Views/Inicio/RegistroPage.xaml", typeof(global::Delivery.Views.Inicio.RegistroPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Delivery.Views.Inicio.Reset.Page1.xaml", "Views/Inicio/Reset/Page1.xaml", typeof(global::Delivery.Views.Inicio.Reset.Page1))]
 
-namespace Delivery.Views.Inicio {
+namespace Delivery.Views.Inicio.Reset {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Inicio\\RegistroPage.xaml")]
-    public partial class RegistroPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Inicio\\Reset\\Page1.xaml")]
+    public partial class Page1 : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RegistroPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Page1));
         }
     }
 }

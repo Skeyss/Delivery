@@ -38,9 +38,10 @@ C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\nets
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Busqueda\AgrupacionPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\BienvenidaPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\CrearCuentaPage.xaml.g.cs
-C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\IncioPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\IniciarSesionPage.xaml.g.cs
-C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\RegistroPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\Reset\EnviarCodigoResetPage.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\Reset\ResetContrasenha.xaml.g.cs
+C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\Reset\VerificacionDeCodigoResetPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\Inicio\VerificacionCodigoPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 C:\Users\skeys\source\repos\Osito fast\Delivery\Delivery\Delivery\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs

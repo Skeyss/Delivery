@@ -1,6 +1,8 @@
-﻿using Delivery.Core.HttpClientGeneral;
+﻿using Delivery.Core;
+using Delivery.Core.HttpClientGeneral;
 using Delivery.Models;
 using Delivery.Models.Inicio;
+using Delivery.Models.Inicio.Reset;
 using Delivery.Views.Inicio;
 using System;
 using System.Collections.Generic;
@@ -26,15 +28,13 @@ namespace Delivery.Services
                 try
                 {
                     await SecureStorage.SetAsync(AppSettings.nameId, persona.Id.ToString());
-                    //await SecureStorage.SetAsync(AppSettings.nameTipoDeDocumento, persona.tipo);
-                    //await SecureStorage.SetAsync(AppSettings.nameNumeroDeDocumento, persona.numer);
+                    //await SecureStorage.SetAsync(AppSettings.nameTipoDeDocumento, persona.);
+                    //await SecureStorage.SetAsync(AppSettings.nameNumeroDeDocumento, persona.NUME);
                     await SecureStorage.SetAsync(AppSettings.nameDenominacion, persona.Denominacion);
                     await SecureStorage.SetAsync(AppSettings.nameTelefono, persona.Telefono);
                     await SecureStorage.SetAsync(AppSettings.nameEmail, string.IsNullOrEmpty(persona.Email) ? "" : persona.Email);
                     await SecureStorage.SetAsync(AppSettings.namePassword, Password);
-                    await SecureStorage.SetAsync(AppSettings.nameAccess, persona.Token);
-
-                
+                    await SecureStorage.SetAsync(AppSettings.nameAccess, persona.Token);                
                     Preferences.Set(AppSettings.nameFrom, persona.ValidFrom.GetValueOrDefault());
                     Preferences.Set(AppSettings.nameTo, persona.ValidTo.GetValueOrDefault());
 
@@ -49,51 +49,90 @@ namespace Delivery.Services
             return (servicePost.Status, servicePost.Mensaje);
         }
 
+
         public async static Task<(bool Status,string mensaje)> CreacionUsuarioAsync(CreacionPersona persona)
         {
             
             string url = AppSettings.ApiUrl + "api/IncioDeSesion/Registrate";
             var servicePost = await Post<CreacionPersona>.PostService(url, null, persona);
+
             return servicePost;
         }
 
-        //con autorizacion
-
-        public async static Task<(bool Status, string mensaje)> VerificacionDePINAsync( string codigo)
+        public async static Task<(bool Status, string mensaje)> VerificacionDePINAsync(string Telefono, string codigo)
         {
-            var validador = await TokenValidator.VerificarToken();
 
-            if (validador.Status)
+            PersonaVerificacionDeCodigo verificacion = new PersonaVerificacionDeCodigo();
+            verificacion.Telefono = Telefono;
+            verificacion.CodigoDeVerificacion = codigo;
+
+            string url = AppSettings.ApiUrl + "api/IncioDeSesion/VerificarCodigo";
+
+            return await Post<PersonaVerificacionDeCodigo>.PostService(url, null, verificacion);
+
+        }
+
+        public async static Task<(bool Status, string mensaje)> VolverAEnviarCodigoDePINAsync(string Telefono)
+        {
+
+            string url = AppSettings.ApiUrl + "api/IncioDeSesion/" + Telefono + "/VolverAEnviarCodigo";
+            return await Get<object>.GetService(url, null);
+        }
+
+
+        public async static Task<(bool Status, string mensaje)> EnviarDePINResetContrasenhaAsync(string Telefono)
+        {
+            string url = AppSettings.ApiUrl + "api/IncioDeSesion/" + Telefono + "/Reset";
+            return await Post<object>.PostService(url, null, null);
+        }
+
+        public async static Task<(bool Status,int Id,string Token, string mensaje)> VerificacionDePINResetContrasenhaAsync(string Telefono, string Codigo)
+        {
+            IncioDeSesionResetPassword incioDeSesionResetPassword = new IncioDeSesionResetPassword();
+            incioDeSesionResetPassword.Telefono = Telefono;
+            incioDeSesionResetPassword.PasswordReset = Codigo;
+            string url = AppSettings.ApiUrl + "api/IncioDeSesion/ResetPassword";
+            var servicePost = await Post<IncioDeSesionResetPassword>.PostEntidadService<PersonaLogin>(url, null, incioDeSesionResetPassword);
+            if (servicePost.Status)
             {
-                PersonaVerificacionDeCodigo verificacion = new PersonaVerificacionDeCodigo();
-                verificacion.Id = await AppKey.ConseguirId();
-                verificacion.Telefono = await AppKey.ConseguirTelefono();
-                verificacion.CodigoDeVerificacion = codigo;
-
-                string url = AppSettings.ApiUrl + "api/Persona/" + verificacion.Id + "/VerificarCodigo";
-
-                return await Post<PersonaVerificacionDeCodigo>.PostService(url, await AppKey.ConseguirAccess(), verificacion);
+                return (servicePost.Status, servicePost.Entidad.Id, Seguridad.Encriptar(servicePost.Entidad.Token, Telefono), servicePost.Mensaje);
             }
             else
             {
-                return (validador.Status, validador.Mensaje);
-            }          
+                return (servicePost.Status, 0, null, servicePost.Mensaje);
+            }
+
         }
 
-        public async static Task<(bool Status, string mensaje)> VolverAEnviarCodigoDePINAsync()
+
+
+
+
+        //    con autorizacion
+
+        public async static Task<(bool Status, string mensaje)> ResetPassword(string Telefono,int Id,string NuevoPassword, string Authen)
         {
-            var validador = await TokenValidator.VerificarToken();
 
-            if (validador.Status)
-            {
-                string url = AppSettings.ApiUrl + "api/Persona/" + await AppKey.ConseguirId() + "/VolverAEnviarCodigo";
-                return await Get<object>.GetService(url, await AppKey.ConseguirAccess());
-            }
-            else
-            {
-                return (validador.Status, validador.Mensaje);
-            }
+            PersonaCambioDePassword personaCambioDePassword = new PersonaCambioDePassword();
+            personaCambioDePassword.Id = Id;
+            personaCambioDePassword.Password = NuevoPassword;
+            string url = AppSettings.ApiUrl + "api/Persona/" + Id.ToString() + "/ResetContrasenha";
+            string authen = Authen == null ? null : Seguridad.Desencriptar(Authen, Telefono);
+            return await Post<PersonaCambioDePassword>.PostService(url, authen, personaCambioDePassword);
+
         }
+
+
+        //          var validador = await TokenValidator.VerificarToken();
+
+        //        if (validador.Status)
+        //        {
+        //        }
+        //        else
+        //        {
+        //            return (validador.Status, validador.Mensaje);
+        //        }
+
 
     }
 }

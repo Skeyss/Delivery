@@ -26,13 +26,13 @@ namespace Delivery.Views.Inicio {
         private global::Xamarin.Forms.Label lblErrorNumeroDeTelefono;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label lblErrorNumeroDaaeTelefono;
+        private global::Delivery.Renderer.MyEntry entryConstrasenha;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Label lblErrorContrasenha;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnIniciarSesion;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button btnOlvidateTuContrasenha;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -40,9 +40,9 @@ namespace Delivery.Views.Inicio {
             lblNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblNumeroDeTelefono");
             entryNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Delivery.Renderer.MyEntry>(this, "entryNumeroDeTelefono");
             lblErrorNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblErrorNumeroDeTelefono");
-            lblErrorNumeroDaaeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblErrorNumeroDaaeTelefono");
+            entryConstrasenha = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Delivery.Renderer.MyEntry>(this, "entryConstrasenha");
+            lblErrorContrasenha = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblErrorContrasenha");
             btnIniciarSesion = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnIniciarSesion");
-            btnOlvidateTuContrasenha = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnOlvidateTuContrasenha");
         }
     }
 }

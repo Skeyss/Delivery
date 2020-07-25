@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.Reset.ResetContrasenha"
+             xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
+             BackgroundColor="{StaticResource ColorFondo}">
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="BorderColor" Value="WhiteSmoke"></Setter>
+                <Setter Property="Padding" Value="15"></Setter>
+            </Style>
+
+
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    
+    
+
+
+    <Grid>
+
+        <StackLayout  
+                        Style="{StaticResource styleStackLayout500}"
+                        BackgroundColor="{StaticResource ColorFondo}">
+
+
+
+            <Label Text="Restablecer contraseña"
+                   FontSize="Caption"
+                   FontAttributes="Bold"></Label>
+
+            <Label Text="Ingrese su nueva contraseña" 
+                   FontSize="Large"                   
+                   TextColor="Black"></Label>
+
+
+
+            <Frame Margin="0,0,0,5">
+
+                <StackLayout  Padding="0" Margin="0">
+
+                    <Label Text="Nueva contraseña" 
+                           VerticalOptions="End"
+                           TextColor="{StaticResource ColorAuxiliarDos}"
+                           FontSize="Caption"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start">
+
+                        <Label.Triggers>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenhaUno}, Path=IsFocused}" Value="True">
+                                <Setter Property="FontSize" Value="Small"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenhaUno}, Path=IsFocused}" Value="False">
+                                <Setter Property="FontSize" Value="Caption"></Setter>
+                            </DataTrigger>
+
+                        </Label.Triggers>
+
+                    </Label>
+
+                    <Renderer:MyEntry   x:Name="entryConstrasenhaUno"
+                                        Text="{Binding ContrasenhaUno}"
+                                        Placeholder="*******************"                        
+                                        ReturnType="Next"                    
+                                        MaxLength="30"
+                                        Keyboard="Text"
+                                        IsPassword="True"                       
+                                        HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorContrasenhaUno" 
+                    TextColor="{StaticResource ColorAuxiliarUno}" 
+                    IsVisible="False"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
+
+            <Frame Margin="0,0,0,5">
+
+                <StackLayout  Padding="0" Margin="0">
+
+                    <Label Text="Vuelva a escribir la contraseña " 
+                           VerticalOptions="End"
+                           TextColor="{StaticResource ColorAuxiliarDos}"
+                           FontSize="Caption"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start">
+
+                        <Label.Triggers>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenhaDos}, Path=IsFocused}" Value="True">
+                                <Setter Property="FontSize" Value="Small"></Setter>
+                            </DataTrigger>
+
+                            <DataTrigger TargetType="Label" Binding="{Binding Source= {x:Reference entryConstrasenhaDos}, Path=IsFocused}" Value="False">
+                                <Setter Property="FontSize" Value="Caption"></Setter>
+                            </DataTrigger>
+
+                        </Label.Triggers>
+
+                    </Label>
+
+                    <Renderer:MyEntry   x:Name="entryConstrasenhaDos"
+                                        Text="{Binding ContrasenhaDos}"
+                                        Placeholder="*******************"                        
+                                        ReturnType="Next"                    
+                                        MaxLength="30"
+                                        Keyboard="Text"
+                                        IsPassword="True"                       
+                                        HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorContrasenhaDos" 
+                    TextColor="{StaticResource ColorAuxiliarUno}" 
+                    IsVisible="False"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
+
+
+
+            <Button    x:Name="btnGuardarContrasemha"
+                       Text="Guardar contraseña"        
+                       FontSize="Caption"
+                       Command="{Binding CommandCambiarContrasenha}"
+                       Style="{StaticResource styleBtnPrimario}">
+            </Button>
+
+        </StackLayout>
+
+
+        <Grid Opacity=".7" BackgroundColor="White" IsVisible="{Binding IsBusy}">
+
+            <StackLayout  
+                          Margin="0"
+                          Padding="0"
+                          BackgroundColor="White"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                   Color="{StaticResource ColorAuxiliarDos}"  
+                                   Scale="{OnPlatform 1, Android=0.5, iOS=1, UWP=2}" 
+                                   FlowDirection="RightToLeft" />
+            </StackLayout>
+
+        </Grid>
+
+
+    </Grid>
+
+</ContentPage>

@@ -16,10 +16,11 @@ namespace Delivery.Views.Inicio
         VerificacionCodigoPageViewModel verificacionCodigoPageViewModel = new VerificacionCodigoPageViewModel();
 
        
-        public VerificacionCodigoPage(string NumeroDeTelefono)
+        public VerificacionCodigoPage(string NumeroDeTelefono,string Contrasenha)
         {
             InitializeComponent();
             verificacionCodigoPageViewModel.NumeroTelefonoAValidar = NumeroDeTelefono;
+            verificacionCodigoPageViewModel.Contrasenha = Contrasenha;
             this.BindingContext = verificacionCodigoPageViewModel;
         }
 

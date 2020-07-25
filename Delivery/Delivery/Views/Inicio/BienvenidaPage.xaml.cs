@@ -13,16 +13,23 @@ namespace Delivery.Views.Inicio
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BienvenidaPage : ContentPage
     {
-        public BienvenidaPage()
+        BienvenidaPageViewModel bienvenidaPageViewModel { get; set; }
+        public  BienvenidaPage()
         {
             InitializeComponent();
-            BindingContext = new BienvenidaPageViewModel(Navigation);
+            bienvenidaPageViewModel = new BienvenidaPageViewModel();
+     
         }
 
-        private void btnCrearCuenta_Clicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
         {
-            Navigation.PopAsync();
-            Navigation.PushAsync(new CrearCuentaPage()) ;
+            base.OnAppearing();
+            if (bienvenidaPageViewModel.Bienvenidas==null)
+            {
+                await bienvenidaPageViewModel.CargarDatosIniciales();
+                BindingContext = bienvenidaPageViewModel;
+            }
+
         }
     }
 }

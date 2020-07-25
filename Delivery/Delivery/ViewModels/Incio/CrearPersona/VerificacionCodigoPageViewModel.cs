@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Delivery.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -44,6 +45,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
         #endregion
 
         public string NumeroTelefonoAValidar { get; set; }
+        public string Contrasenha { get; set; }
         public ICommand TextchangedCommand { get; set; }
         public ICommand CommandVolverAEnviarCodigo { get; set; }
         public ICommand CommandVerificarCodigo { get; set; }
@@ -72,7 +74,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
             {
                 SeEnvioCodigo = false;
                 IsBusy = true;
-                var service = await Services.PersonaService.VolverAEnviarCodigoDePINAsync();
+                var service = await Services.PersonaService.VolverAEnviarCodigoDePINAsync(NumeroTelefonoAValidar);
                 IsBusy = false;
                 if (service.Status)
                 {
@@ -87,7 +89,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
             catch (Exception exception)
             {
                 //Guardar mensaje ex
-                await Application.Current.MainPage.DisplayAlert(" ", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
+                await Application.Current.MainPage.DisplayAlert("", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
             }
         }
 
@@ -119,7 +121,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
             catch (Exception exception)
             {
                 //Guardar mensaje ex
-                await Application.Current.MainPage.DisplayAlert(" ", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
+                await Application.Current.MainPage.DisplayAlert("", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
             }
         }
 
@@ -132,11 +134,20 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                 if (HasErrors == false)
                 {
                     IsBusy = true;
-                    var service = await Services.PersonaService.VerificacionDePINAsync(codigoVerificar.ToString());
+                    var service = await Services.PersonaService.VerificacionDePINAsync(NumeroTelefonoAValidar, codigoVerificar.ToString());
                     IsBusy = false;
                     if (service.Status)
                     {
-                        await Application.Current.MainPage.DisplayAlert("OK", " Ya esta", "Ok");
+                        var InicioDeSesion = await Services.PersonaService.IncioDeSesionAsync(NumeroTelefonoAValidar, Seguridad.Desencriptar(Contrasenha, NumeroTelefonoAValidar));
+                        if (InicioDeSesion.Status)
+                        {
+
+                        }
+                        else
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Error", InicioDeSesion.mensaje, "Ok");
+                        }
+
                     }
                     else
                     {
@@ -148,7 +159,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
             catch (Exception exception)
             {
                 //Guardar mensaje ex
-                await Application.Current.MainPage.DisplayAlert(" ", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
+                await Application.Current.MainPage.DisplayAlert("", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
             }
         }
 

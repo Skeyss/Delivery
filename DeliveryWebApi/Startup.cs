@@ -40,8 +40,8 @@ namespace DeliveryWebApi
 
             //SKEYS CAMBIAR ESTO
             services.AddDbContext<DeliveryContext>(options => options.UseMySql(Configuration.GetConnectionString("clientesBaseDeDatos"), x => x.ServerVersion("5.5.40-mysql")));
-            services.AddScoped<IAgrupacionRepositorio, AgrupacionRepositorio>();
 
+            services.AddScoped<IAgrupacionRepositorio, AgrupacionRepositorio>();
             services.AddScoped<IPersonaRepositorio, PersonaRepositorio>();
             services.AddScoped<IPantalladebienvenida, PantalladebienvenidaRepositorio>();
             services.AddScoped<IPasswordHasher<Persona>, PasswordHasher<Persona>>();

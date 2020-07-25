@@ -58,6 +58,11 @@ namespace Delivery_Datos.Configuracion
                 .HasCharSet("utf8")
                 .HasCollation("utf8_general_ci");
 
+            entity.Property(e => e.PasswordReset)
+                .HasColumnType("varchar(250)")
+                .HasCharSet("utf8")
+                .HasCollation("utf8_general_ci");
+
             entity.Property(e => e.Telefono)
                 .HasColumnType("varchar(15)")
                 .HasCharSet("utf8")

@@ -17,6 +17,7 @@ namespace Delivery_Entidades
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string PasswordReset { get; set; }
         public string CodigoDeVerificacion { get; set; }
         public string TelefonoVerificado { get; set; }
 

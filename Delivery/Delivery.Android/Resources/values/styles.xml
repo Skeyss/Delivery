@@ -31,6 +31,7 @@
     
     //Color de status bar 
     <item name="android:statusBarColor">@color/ColorPrimario</item>
+    <!--<item name="android:statusBarColor">#FFFFFF</item>-->
     //paar que no salga en mayusculas
     //skeys ver esto en los demas proyecto 
     <item name="android:textAllCaps">false</item>

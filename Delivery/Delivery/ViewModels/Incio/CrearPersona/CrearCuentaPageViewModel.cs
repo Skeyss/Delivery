@@ -1,4 +1,5 @@
-﻿using Delivery.Models;
+﻿using Delivery.Core;
+using Delivery.Models;
 using Delivery.Models.Inicio;
 using Delivery.Views.Inicio;
 using Newtonsoft.Json.Serialization;
@@ -18,6 +19,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
 
         #region
         private string numeroDeTelefono;
+        private string contrasenha;
 
         //[Required(ErrorMessage = "Campo obligatorio")]
         [MinLength(9, ErrorMessage = "Ingrese nueve dígitos")]      
@@ -36,13 +38,26 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                 OnPropertyChanged();
             }
         }
-   
+
+        [MinLength(6, ErrorMessage = "La contraseña debe de tener un mínimo de 6 caracteres")]
+        public string Contrasenha
+        {
+            get => contrasenha;
+            set
+            {
+                contrasenha = value;
+                Validacion(Contrasenha, () => true, "");
+                OnPropertyChanged();
+            }
+        }
+
 
         private void RevizarValidacionDeControles()
         {
             try
             {
                 Validacion(NumeroDeTelefono == null ? "" : NumeroDeTelefono, () => true, "Ingrese un número de Teléfono válido", "NumeroDeTelefono");
+                Validacion(Contrasenha == null ? "" : Contrasenha, () => true, "gg", "Contrasenha");
             }
             catch (Exception ex)
             {
@@ -83,7 +98,7 @@ namespace Delivery.ViewModels.Incio.CrearPersona
                     IsBusy = false;
                     if (service.Status)
                     {
-                        await Application.Current.MainPage.Navigation.PushAsync(new VerificacionCodigoPage(personaAGuardar.Telefono));                     
+                        await Application.Current.MainPage.Navigation.PushModalAsync(new VerificacionCodigoPage(personaAGuardar.Telefono, Seguridad.Encriptar(personaAGuardar.Password, personaAGuardar.Telefono)));
                     }
                     else
                     {
@@ -99,15 +114,18 @@ namespace Delivery.ViewModels.Incio.CrearPersona
             catch (Exception exception)
             {
                 //Guardar mensaje ex
-                await Application.Current.MainPage.DisplayAlert(" ", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
+                await Application.Current.MainPage.DisplayAlert("", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
             }
 
         }
 
         private CreacionPersona PasarDatosDeInterfazAEntidad()
         {
+
+
             CreacionPersona resultado = new CreacionPersona();
             resultado.Telefono = NumeroDeTelefono;
+            resultado.Password = contrasenha;
             return resultado;
         }
      

@@ -13,8 +13,8 @@ namespace Delivery.ViewModels.Incio
 {
     public class BienvenidaPageViewModel : BaseViewModel
     {
-        public IList<Bienvenida> Bienvenidas { get; set; }
-        public INavigation Navigation;
+        public List<Pantalladebienvenida> Bienvenidas { get; set; }
+   
         public ICommand CommandCrearCuenta { get; set; }
         public ICommand CommandIniciarSesion { get; set; }
 
@@ -28,17 +28,73 @@ namespace Delivery.ViewModels.Incio
                 activarBTnCrearCuenta = value;
                 OnPropertyChanged();
             }
+
+          
         }
 
-        public BienvenidaPageViewModel(INavigation _Navigation)
+
+   
+    
+
+        public BienvenidaPageViewModel()
         {
-            Navigation = _Navigation;
-            CommandCrearCuenta = new Command(NavegarCrearCuentaPage);
+            CommandCrearCuenta =
+                                  new Command(
+                                      execute: () =>
+                                                   { 
+                                                       NavegarCrearCuentaPage();
+                                                       ((Command)CommandCrearCuenta).ChangeCanExecute();
+                                                       ((Command)CommandIniciarSesion).ChangeCanExecute();
+                                                   },
+                                      canExecute: () => IsBusy != false
+                                                ); 
+
+
+            //MultiplyBy2Command = new Command(
+            //                    execute: () =>
+            //                    {
+            //                        Number *= 2;
+            //                        ((Command)MultiplyBy2Command).ChangeCanExecute();
+            //                        ((Command)DivideBy2Command).ChangeCanExecute();
+            //                    },
+            //                       canExecute: () => Number < Math.Pow(2, 10));
+
+
+
             CommandIniciarSesion = new Command(NavegarIncioDeSesion);
             // ActivarBTnCrearCuenta = true;
             ActivarBTnCrearCuenta = false;
 
+          
 
+        }
+
+        public async Task CargarDatosIniciales() 
+        {
+            
+           
+
+            try
+            {
+
+                IsBusy = true;
+                var service = await Services.BienvenidaService.ConseguirPantallaDeBienvenida();
+                IsBusy = false;
+                if (service.Status)
+                {
+                    Bienvenidas = service.ListBienvenida;
+                }
+                else
+                {
+                    
+                }
+
+            }
+            catch (Exception exception)
+            {
+                //Guardar mensaje ex
+                await Application.Current.MainPage.DisplayAlert("", "Error en la aplicación, por favor vuelva a intentar otra vez", "Ok");
+            }
         }
 
         private async void NavegarCrearCuentaPage()
@@ -46,14 +102,24 @@ namespace Delivery.ViewModels.Incio
 
             try
             {
-                //if (ActivarBTnCrearCuenta == true)
-                //{
-                //    ActivarBTnCrearCuenta = false;
-                IsBusy = true;
-                    await Navigation.PushAsync(crearCuentaPage, true);
-                IsBusy = false;
-                //    ActivarBTnCrearCuenta = true;
-                //}
+                if (CommandIniciarSesion.CanExecute(CommandIniciarSesion))
+                {
+
+                }
+                else
+                {
+
+                }
+                ////if (ActivarBTnCrearCuenta == true)
+                ////{
+                ////    ActivarBTnCrearCuenta = false;
+                //IsBusy = true;
+                //await Navigation.PushAsync(crearCuentaPage, true);
+                //IsBusy = false;
+                ////    ActivarBTnCrearCuenta = true;
+                ////}
+                ///
+                await Application.Current.MainPage.Navigation.PushAsync(crearCuentaPage);
 
             }
             catch (Exception ex)
@@ -66,9 +132,11 @@ namespace Delivery.ViewModels.Incio
 
         private async void NavegarIncioDeSesion()
         {
+
             try
             {
-                await Navigation.PushAsync(new IniciarSesionPage());
+                await Application.Current.MainPage.Navigation.PushAsync(new IniciarSesionPage());
+
             }
             catch (Exception ex)
             {

@@ -765,7 +765,7 @@
           "lib/monoandroid90/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.1080": {
+      "Xamarin.Forms/4.7.0.1142": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.CustomTabs": "28.0.0.3",
@@ -799,7 +799,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/Delivery.dll": {}
@@ -1644,10 +1644,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.7.0.1080": {
-      "sha512": "YN04zJoVBBKdhYnIK1lwZJTGCFrHJ+bUfqQK4aKy8oDjthh5JlNcjetUS+eV+JK9XcmYpS2SxpmDxFFXxSfONQ==",
+    "Xamarin.Forms/4.7.0.1142": {
+      "sha512": "P/o+VzmgeoFJZ2WoRiar/w0RmkR9WvwAEx6j891Bf31psPjSYjfTI8tGLczFa8LDqdv63pGQNH4hnBoxJjivzg==",
       "type": "package",
-      "path": "xamarin.forms/4.7.0.1080",
+      "path": "xamarin.forms/4.7.0.1142",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1954,7 +1954,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.7.0.1080.nupkg.sha512",
+        "xamarin.forms.4.7.0.1142.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1969,7 +1969,7 @@
       "Delivery >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.7.0.1080"
+      "Xamarin.Forms >= 4.7.0.1142"
     ]
   },
   "packageFolders": {
@@ -1991,6 +1991,7 @@
       ],
       "configFilePaths": [
         "C:\\Users\\skeys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1998,6 +1999,7 @@
         "monoandroid90"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -2024,7 +2026,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.7.0.1080, )"
+            "version": "[4.7.0.1142, )"
           }
         }
       }

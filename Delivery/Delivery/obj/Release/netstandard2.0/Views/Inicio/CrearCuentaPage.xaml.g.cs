@@ -26,6 +26,12 @@ namespace Delivery.Views.Inicio {
         private global::Xamarin.Forms.Label lblErrorNumeroDeTelefono;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Delivery.Renderer.MyEntry entryConstrasenha;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Label lblErrorContrasenha;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button btnCrearCuenta;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -34,6 +40,8 @@ namespace Delivery.Views.Inicio {
             lblNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblNumeroDeTelefono");
             entryNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Delivery.Renderer.MyEntry>(this, "entryNumeroDeTelefono");
             lblErrorNumeroDeTelefono = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblErrorNumeroDeTelefono");
+            entryConstrasenha = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Delivery.Renderer.MyEntry>(this, "entryConstrasenha");
+            lblErrorContrasenha = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblErrorContrasenha");
             btnCrearCuenta = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnCrearCuenta");
         }
     }

@@ -62,46 +62,58 @@ namespace Delivery.Core.HttpClientGeneral
 
         }
 
-        public async Task<(int StatusCode, ObservableCollection<T>)> GetServicep(string urlApi,string authHeaderValue)
+        public async static Task<(bool Status,string Mensaje, T Result)> GetServiceIEnumerable(string urlApi,string authHeaderValue)
         {
-            int statusCode = 0;
+
             try
             {
                 if (VerificarConexion.ExisteConexionInternet() == false)
                 {
-                    statusCode = 1;
-                    return (statusCode, null);
+                    return (false, "Verifique su conexión a internet ", default);
                 }
                 else
                 {
                     HttpClient client = new HttpClient();
                     client.BaseAddress = new Uri(urlApi);
-                    if (authHeaderValue!=null)
+                    if (authHeaderValue != null)
                     {
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", authHeaderValue);
                     }
+
                     Uri uri = new Uri(string.Format(urlApi, string.Empty));
                     HttpResponseMessage response = await client.GetAsync(uri);
-                    statusCode = response.StatusCode.GetHashCode();
-
-
+                    int statusCode = response.StatusCode.GetHashCode();
+                   // response.EnsureSuccessStatusCode();
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string content = await response.Content.ReadAsStringAsync();
-                        return (statusCode, JsonConvert.DeserializeObject<ObservableCollection<T>>(content));
+                        var resposeContsssent = await response.Content?.ReadAsStringAsync();
+                        T result = JsonConvert.DeserializeObject<T>(resposeContsssent);
+
+                        return (true, "Solicitud procesada con éxito", result);
+                    }
+                    else if (statusCode == 400)
+                    {
+                        var resposeContent = await response.Content?.ReadAsStringAsync();
+                        return (false, resposeContent, default);
+                    }
+                    else if (statusCode == 403)
+                    {
+                        return (false, "Acceso denegado ", default);
                     }
                     else
                     {
-                        return (statusCode, null);
+                        //Guardar mensaje ex
+                        var resposeContent = await response.Content?.ReadAsStringAsync();
+                        return (false, "Internal server error", default);
                     }
                 }
-
 
             }
             catch (Exception ex)
             {
-                return (statusCode, null);
+                //Guardar mensaje ex
+                return (false, "Error durante la conexión con el servidor", default);
             }
 
         }

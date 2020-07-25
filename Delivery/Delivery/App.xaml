@@ -54,13 +54,21 @@
 
 
 
-
+            <Style TargetType="StackLayout" x:Key="styleStackLayout500">
+                <Setter Property="WidthRequest" Value="500"></Setter>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="Padding" Value="20,20,20,20"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+            </Style>
+            
 
             <Style TargetType="StackLayout" x:Key="styleStackLayout">
                 <Setter Property="WidthRequest" Value="800"></Setter>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
                 <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
                 <Setter Property="Padding" Value="20,20,20,20"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
             </Style>
 
 

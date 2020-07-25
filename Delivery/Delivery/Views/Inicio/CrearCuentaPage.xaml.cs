@@ -16,14 +16,18 @@ namespace Delivery.Views.Inicio
     public partial class CrearCuentaPage : ContentPage
     {
         CrearCuentaPageViewModel crearCuentaPageViewModel = new CrearCuentaPageViewModel();
+
         public CrearCuentaPage()
         {
+     
             InitializeComponent();            
             this.BindingContext = crearCuentaPageViewModel;
         }
 
         protected async override void OnAppearing()
         {
+            
+
             base.OnAppearing();
             crearCuentaPageViewModel.ErrorsChanged += CrearCuentaPageViewModel_ErrorsChanged;
 
@@ -42,7 +46,7 @@ namespace Delivery.Views.Inicio
                 case nameof(crearCuentaPageViewModel.NumeroDeTelefono):
                     {
                         if (propErrores)
-                        {
+                        {                           
                             lblErrorNumeroDeTelefono.IsVisible = true;
                             lblErrorNumeroDeTelefono.Text = propText;
                         }
@@ -52,6 +56,20 @@ namespace Delivery.Views.Inicio
                             lblErrorNumeroDeTelefono.Text = "";
                         }
 
+                        break;
+                    }
+                case nameof(crearCuentaPageViewModel.Contrasenha):
+                    {
+                        if (propErrores)
+                        {
+                            lblErrorContrasenha.IsVisible = true;
+                            lblErrorContrasenha.Text = propText;
+                        }
+                        else
+                        {
+                            lblErrorContrasenha.IsVisible = false;
+                            lblErrorContrasenha.Text = "";
+                        }
                         break;
                     }
                 default:

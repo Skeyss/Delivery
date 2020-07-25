@@ -21,6 +21,7 @@ namespace Delivery
         public static string nameGuardarIncioDeSesion = "IncioDeSesionAutomatico";
         public static string nameTo = "To";
         public static string nameFrom= "From";
+        public static string nameIncioDeSesionAutomatico = "IncioDeSesionAutomatico ";
     }
 
     public class AppKey

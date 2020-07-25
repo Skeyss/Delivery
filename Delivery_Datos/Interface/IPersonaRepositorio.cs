@@ -10,7 +10,7 @@ namespace Delivery_Datos.Interface
     {
         Task<Persona> Agregar(Persona persona);
 
-        Task<bool> Actualizar(Persona persona,bool encriptarPassword,bool encriptarCodigoDeVerificacion);
+        Task<bool> Actualizar(Persona persona,bool encriptarPassword,bool encriptarCodigoDeVerificacion,bool encriptarPasswordReset);
 
         Task<(bool status, Persona persona)> ObtenerPersona(string Telefono);
 
@@ -18,8 +18,10 @@ namespace Delivery_Datos.Interface
 
         Task<(bool status,bool existe)> ExisteTelefono(string Codigo);
 
-        Task<(bool status, Persona persona)> ValidarIncioDeSesion(string Telefono, string Password);
+        Task<(bool status,Persona persona)> ValidarIncioDeSesion(string Telefono, string Password);
 
-        Task<(bool status, bool existe, bool verificado)> ValidarCodigoDeTelefono(int Id, string Codigo);
+        Task<(bool status, bool SePidioCambiarContrasenha, Persona persona)> ValidarIncioDePasswordReset(string Telefono, string Codigo);
+
+        Task<(bool status, bool existe, bool verificado)> ValidarCodigoDeTelefono(string Telefono, string Codigo);
     }
 }

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "E5AEahUvRUNIyKrzCzRM71SO6YV353zcxGzj9EvvlOJlfVYOzdYFqdBq0d8NAUhQlYTzYn73eFcU0VAo0Vl2pg==",
+  "dgSpecHash": "spqqZitdK6XTgP4tEqc0oFxjMUgVdPSWHYDuYeQ75MvXgjNPBIie4H651bAoWVYHNZPYqZM2Tkl5R+0L7Qe0QA==",
   "success": true,
   "projectFilePath": "C:\\Users\\skeys\\source\\repos\\Osito fast\\Delivery\\Delivery\\Delivery.iOS\\Delivery.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skeys\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\skeys\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\skeys\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Renderer="clr-namespace:Delivery.Renderer;assembly=Delivery"
+             mc:Ignorable="d"
+             x:Class="Delivery.Views.Inicio.Reset.VerificacionDeCodigoResetPage">
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="BorderColor" Value="WhiteSmoke"></Setter>
+                <Setter Property="Padding" Value="15"></Setter>
+            </Style>
+
+
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <Grid>
+
+        <StackLayout Style="{StaticResource styleStackLayout500}"
+                     BackgroundColor="{StaticResource ColorFondo}">
+
+            <Label Text="Ingresar"
+                   FontSize="Caption"
+                   FontAttributes="Bold"></Label>
+
+
+            <Label Text="Código de confirmación" 
+                   FontSize="Large"                   
+                   TextColor="Black"></Label>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextColor="Black" FontSize="Micro" Text="Revisa tus mensajes. Hemos enviado el código PIN al "/>
+                        <Span TextColor="Black" FontSize="Micro" FontAttributes="Bold" Text="{Binding NumeroTelefonoAValidar}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="Mi código PIN es"
+                   FontSize="Micro"
+                   FontAttributes="Bold"></Label>
+
+
+            <Frame Margin="0,10,0,5">
+
+                <StackLayout Padding="0" Margin="0">
+
+                    <Renderer:MyEntry  x:Name="entryNumeroDeTelefono"
+                                       Text="{Binding CodigoVerificar}"
+                                       Placeholder="- - - - - -"
+                                       ReturnType="Next"
+                                       MaxLength="6"
+                                       Keyboard="Numeric"
+                                       HorizontalOptions="{OnPlatform Start, Android=FillAndExpand, iOS=FillAndExpand, UWP=FillAndExpand}"
+                                       ></Renderer:MyEntry>
+
+                    <Label  x:Name="lblErrorCodigo" 
+                            TextColor="{StaticResource ColorAuxiliarUno}" 
+                            IsVisible="False"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
+
+
+
+            <Button x:Name="btnValidarCodigo"
+                    Text="Validar código "        
+                    Command="{Binding CommandVerificarCodigo}"
+                    Style="{StaticResource styleBtnPrimario}"></Button>
+
+
+            <Button Margin="0,10,0,0" 
+                    Text="¿No te llego el SMS? Solicítalo otra vez" 
+                    Style="{StaticResource styleBtnPrimario}"  
+                    HorizontalOptions="Start" 
+                    Command="{Binding CommandVolverAEnviarCodigo}"></Button>
+
+
+
+        </StackLayout>
+
+
+        <Grid Opacity=".7" BackgroundColor="White" IsVisible="{Binding IsBusy}">
+
+            <StackLayout  
+                          Margin="0"
+                          Padding="0"
+                          BackgroundColor="White"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                   Color="{StaticResource ColorAuxiliarDos}"  
+                                   Scale="{OnPlatform 1, Android=0.5, iOS=1, UWP=2}" 
+                                   FlowDirection="RightToLeft" />
+            </StackLayout>
+
+        </Grid>
+
+
+    </Grid>
+
+</ContentPage>

@@ -32,14 +32,16 @@ namespace DeliveryWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Pantalladebienvenida>>> Get()
         {
             var listResultado = await _IPantalladebienvenida.ObtenerTodoAsync();
-            if (listResultado == null)
-            {
-                return BadRequest();
-            }
-            else
-            {
-                return listResultado;
-            }
+
+            return listResultado.List;
+            //if (listResultado == null)
+            //{
+            //    return BadRequest();
+            //}
+            //else
+            //{
+            //    return listResultado;
+            //}
         }
 
     }

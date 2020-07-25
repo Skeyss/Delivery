@@ -29,6 +29,8 @@ namespace Delivery_Datos.Repositorio
             {
                 personaCrear.Password = _passwordHasher.HashPassword(personaCrear, personaCrear.Password);
                 personaCrear.CodigoDeVerificacion = _passwordHasher.HashPassword(personaCrear, personaCrear.CodigoDeVerificacion);
+                personaCrear.PasswordReset = "";
+                personaCrear.PasswordReset = _passwordHasher.HashPassword(personaCrear, personaCrear.PasswordReset);
                 _contexto.Persona.Add(personaCrear);
                 await _contexto.SaveChangesAsync();
                 return personaCrear;
@@ -41,7 +43,7 @@ namespace Delivery_Datos.Repositorio
          
         }
 
-        public async Task<bool> Actualizar(Persona persona, bool encriptarPassword, bool encriptarCodigoDeVerificacion)
+        public async Task<bool> Actualizar(Persona persona, bool encriptarPassword, bool encriptarCodigoDeVerificacion,bool encriptarPasswordReset)
         {
             try
             {
@@ -53,6 +55,10 @@ namespace Delivery_Datos.Repositorio
                 if (encriptarCodigoDeVerificacion)
                 {
                     persona.CodigoDeVerificacion = _passwordHasher.HashPassword(persona, persona.CodigoDeVerificacion);
+                }
+                if (encriptarPasswordReset)
+                {
+                    persona.PasswordReset = _passwordHasher.HashPassword(persona, persona.PasswordReset);
                 }
 
                 _contexto.Persona.Attach(persona);
@@ -125,11 +131,45 @@ namespace Delivery_Datos.Repositorio
             }
         }
 
-        public async Task<(bool status,bool existe, bool verificado)> ValidarCodigoDeTelefono(int Id, string Codigo)
+        public async Task<(bool status, bool SePidioCambiarContrasenha, Persona persona)> ValidarIncioDePasswordReset(string Telefono, string Codigo)
         {
             try
             {
-                var PersonaBd = await _contexto.Persona.FirstOrDefaultAsync(u => u.Id == Id);
+                var PersonaBd = await _contexto.Persona.FirstOrDefaultAsync(u => u.Telefono == Telefono);
+                if (PersonaBd != null)
+                {
+                    var result = _passwordHasher.VerifyHashedPassword(PersonaBd, PersonaBd.PasswordReset, "");
+
+                    bool sePidioCambiarContrasenha = (result == PasswordVerificationResult.Success) ? false : true;
+
+                    var resultado = _passwordHasher.VerifyHashedPassword(PersonaBd, PersonaBd.PasswordReset, Codigo);
+                    if (resultado == PasswordVerificationResult.Success)
+                    {
+                        return (true, sePidioCambiarContrasenha, PersonaBd);
+                    }
+                    else
+                    {
+                        return (true, sePidioCambiarContrasenha, null);
+                    }
+
+                }
+                else
+                {
+                    return (true, false ,null);
+                }
+            }
+            catch (Exception excepcion)
+            {
+                //Guardar mensaje ex
+                return (false,false, null);
+            }
+        }
+
+        public async Task<(bool status,bool existe, bool verificado)> ValidarCodigoDeTelefono(string Telefono, string Codigo)
+        {
+            try
+            {
+                var PersonaBd = await _contexto.Persona.FirstOrDefaultAsync(u => u.Telefono == Telefono);
                 if (PersonaBd != null)
                 {
 

@@ -6,15 +6,15 @@
              xmlns:Incio="clr-namespace:Delivery.Views.Inicio"
              mc:Ignorable="d"
              x:Class="Delivery.Views.Inicio.BienvenidaPage"
-             BackgroundColor="{StaticResource ColorPrimario}"
-             >
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource ColorPrimario}">
 
 
     <ContentPage.Resources>
 
         <ResourceDictionary>
 
-        
+
 
 
 
@@ -22,101 +22,95 @@
 
     </ContentPage.Resources>
 
-   
+    <Grid>
 
-    <ContentPage.Content>
+        <StackLayout  Style="{StaticResource styleStackLayout500}"   
+                      Spacing="0">
+            
 
-        <StackLayout  Style="{StaticResource styleStackLayout}"   WidthRequest="500" BackgroundColor="{StaticResource ColorPrimario}">
+            <CarouselView ItemsSource="{Binding Bienvenidas}" 
+                          IndicatorView="indicatorView">
 
-            <CarouselView ItemsSource="{Binding .Bienvenidas}" IndicatorView="indicatorView">               
-             
                 <CarouselView.ItemTemplate>
+                    
                     <DataTemplate>
 
+                        <StackLayout Padding="25">
 
-                        <StackLayout  >
+                            <Image  Source="{Binding UrlImagen}"
+                                    VerticalOptions="CenterAndExpand"
+                                    Aspect="Fill"></Image>
                             
-                            <Image                           
-                                Source="{Binding .PathImagen}"
-                                Aspect="AspectFill"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="EndAndExpand">   
-                            </Image>
+                            <Label  Text="{Binding MensajePrincipal}"
+                                    FontSize="Title"
+                                    TextColor="White"
+                                    HorizontalTextAlignment="Center"></Label>
+
+                            <Label  Text="{Binding MensajeSecundario}"
+                                    FontSize="Caption"
+                                    TextColor="WhiteSmoke"
+                                    HorizontalTextAlignment="Center"></Label>
                             
-                            
-                            <Label 
-                                
-                                Text="{Binding .MensajePrincipal}"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="EndAndExpand"
-                                FontSize="Title"
-                                TextColor="White"
-                                HorizontalTextAlignment="Center"
-                                ></Label>
-
-                            <Label 
-                                Text="{Binding .MensajeSecundario}"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="StartAndExpand"
-                                FontSize="Subtitle"
-                                TextColor="White"
-                                HorizontalTextAlignment="Center"
-                                ></Label>
-
-                       
-
-                        
-
-
                         </StackLayout>
-                       
-                        
-                      
+
+
+
                     </DataTemplate>
-                </CarouselView.ItemTemplate>              
-             
+                    
+                </CarouselView.ItemTemplate>
+
 
             </CarouselView>
-
-           <!-- Mostrar cuantos objetos hay en carrusel view-->
-            <IndicatorView 
-                    VerticalOptions="CenterAndExpand"
-                   HeightRequest="100"   
-                   x:Name="indicatorView"
-                   IndicatorColor="Red"
-                   SelectedIndicatorColor="Green"
-                   HorizontalOptions="Center">
-            </IndicatorView>
             
-            
-            <StackLayout x:Name="StackLayoutBotones" 
-                Orientation="Horizontal"
-                VerticalOptions="EndAndExpand"
-                IsEnabled="True">
 
-                <Button Style="{StaticResource styleBtnPrimario}"
-                        
-                        x:Name="btnCrearCuenta"  
-                        Text="Crear cuentaaa"  
-                        HorizontalOptions="FillAndExpand"
-                        Command="{Binding .CommandCrearCuenta}"
-                        >
-                    </Button>
+            <!-- Mostrar cuantos objetos hay en carrusel view-->
+            <IndicatorView     x:Name="indicatorView"
+                               VerticalOptions="CenterAndExpand"
+                               HeightRequest="100"                                  
+                               IndicatorColor="{StaticResource ColorTerciario}"
+                               SelectedIndicatorColor="{StaticResource ColorAuxiliarDos}"
+                               HorizontalOptions="CenterAndExpand"></IndicatorView>
 
-                    <Button Style="{StaticResource styleBtnSecundario}" 
-                        x:Name="btnInciarSesion"
-                        Text="Iniciar sesión"
-                        HorizontalOptions="FillAndExpand"
-                        Command="{Binding .CommandIniciarSesion}"
-                        >
-                    </Button>
-                
+
+            <StackLayout    x:Name="StackLayoutBotones" 
+                            Orientation="Horizontal"
+                            VerticalOptions="EndAndExpand">
+
+                            <Button Style="{StaticResource styleBtnPrimario}"                        
+                                    x:Name="btnCrearCuenta"  
+                                    Text="Crear cuentaaa"  
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding CommandCrearCuenta}"></Button>
+
+                            <Button Style="{StaticResource styleBtnSecundario}" 
+                                    x:Name="btnInciarSesion"
+                                    Text="Iniciar sesión"
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding CommandIniciarSesion}"></Button>
+
             </StackLayout>
-            
-        </StackLayout>
-      
-    </ContentPage.Content>
 
-   
-    
+        </StackLayout>
+
+
+        <Grid  BackgroundColor="{StaticResource ColorPrimario}" IsVisible="{Binding IsBusy}">
+
+            <StackLayout  
+                          Margin="0"
+                          Padding="0"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+
+                <Label Text="Logo" TextColor="White"></Label>
+                <Label Text="Iniciando compontes" TextColor="White"></Label>
+                
+                
+
+            </StackLayout>
+
+        </Grid>
+
+
+    </Grid>
+
 </ContentPage>

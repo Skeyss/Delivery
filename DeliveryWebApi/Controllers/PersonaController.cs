@@ -29,18 +29,20 @@ namespace DeliveryWebApi.Controllers
             _mapper = mapper;
         }
 
-        // POST: api/Persona/Registrate
-        [Authorize(Roles ="Persona")]
-        [HttpPost("{Id}/VerificarCodigo")]
+       
+
+
+        [Authorize(Roles = "PersonaResetPassword")]
+        [HttpPost("{Id}/ResetContrasenha")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Post(int Id,[FromBody] PersonaVerificacionDeCodigo personaVerificacionDeCodigo)
+        public async Task<ActionResult> Post(int Id,[FromBody] PersonaCambioDePassword personaCambioDePassword)
         {
             try
             {
 
                 if (
-                    User.Claims.FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value == "Persona"
+                    User.Claims.FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value == "PersonaResetPassword"
                     &&
                     User.Claims.FirstOrDefault(X => X.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value != Id.ToString()
                     )
@@ -49,65 +51,14 @@ namespace DeliveryWebApi.Controllers
 
                 }
 
-                if (personaVerificacionDeCodigo == null)
+                if (personaCambioDePassword==null)
                 {
                     return BadRequest("La solicitud es nula");
                 }
 
-                if (Id!=personaVerificacionDeCodigo.Id)
+                if (Id != personaCambioDePassword.Id)
                 {
-                    return BadRequest("El usuario que envió es distinto al usuario que va a modificar");
-                }
-
-
-
-
-                var validar = await _IPersonaRepositorio.ValidarCodigoDeTelefono(personaVerificacionDeCodigo.Id, personaVerificacionDeCodigo.CodigoDeVerificacion);
-
-                if (validar.status == false)
-                {
-                    return BadRequest("Ocurrió un problema al procesar la información. Intente de nuevo por favor");
-                }
-
-                if (validar.existe==false)
-                {
-                    return BadRequest("El usuario que intenta modificar no se encuentra registrado");
-                }
-
-                if (validar.verificado)
-                {
-                    return StatusCode(StatusCodes.Status200OK);
-                }
-                else
-                {
-                    return BadRequest("El código ingresado es inválido");
-                }
-
-            }
-            catch (Exception exception) 
-            {
-                //Guardar mensaje ex
-                return BadRequest("Error inesperado al verificar código. Intente de nuevo por favor");
-            }
-        }
-
-        [Authorize(Roles = "Persona")]
-        [HttpGet("{Id}/VolverAEnviarCodigo")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Get(int Id)
-        {
-            try
-            {
-
-                if (
-                    User.Claims.FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Value == "Persona"
-                    &&
-                    User.Claims.FirstOrDefault(X => X.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value != Id.ToString()
-                    )
-                {
-                    return BadRequest("Acceso denegado");
-
+                    return BadRequest("Solicitud invalida");                    
                 }
 
                 var resultado = await _IPersonaRepositorio.ObtenerPersonaPorId(Id);
@@ -122,24 +73,23 @@ namespace DeliveryWebApi.Controllers
                     return BadRequest("El usuario que intenta modificar no se encuentra registrado ");
                 }
 
-                if (resultado.persona.TelefonoVerificado == "SI")
+                if (resultado.persona.TelefonoVerificado != "SI")
                 {
-                    return BadRequest("El número de teléfono ya se encuentra registrado, Por favor inicie sesión ");
+                    return BadRequest("El número de teléfono no se encuentra registrado");
                 }
                 else
                 {
-                    string codigoDeVerificacion = (new Random().Next(1000, 9999)).ToString();
-                    resultado.persona.CodigoDeVerificacion = codigoDeVerificacion;
+                    resultado.persona.Password = personaCambioDePassword.Password;
+                    resultado.persona.PasswordReset = "";
 
-                    var statusActualizacion = await _IPersonaRepositorio.Actualizar(resultado.persona, false, true);
+                    var statusActualizacion = await _IPersonaRepositorio.Actualizar(resultado.persona, true, false,true);
                     if (statusActualizacion)
                     {
-                        Services.EnviarSMS.EnviarCodigoDeVerificacion(resultado.persona.Telefono, "Tu código de verificación de Pilco delivery es  " + codigoDeVerificacion);
                         return StatusCode(StatusCodes.Status200OK);
                     }
                     else
                     {
-                        return BadRequest("Error al enviar código. Intente de nuevo por favor");
+                        return BadRequest("Error al actualizar contraseña. Intente de nuevo por favor ");
                     }
                 }
 
@@ -147,7 +97,7 @@ namespace DeliveryWebApi.Controllers
             catch (Exception exception)
             {
                 //Guardar mensaje ex
-                return BadRequest("Error inesperado al enviar código. Intente de nuevo por favor");
+                return BadRequest("Error inesperado al procesar información  Intente de nuevo por favor");
             }
         }
 
